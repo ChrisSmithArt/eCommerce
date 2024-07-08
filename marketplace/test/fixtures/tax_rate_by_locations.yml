@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  province: MyString
+  current_gst: 1
+  current_hst: 1
+  current_pst: 1
+  current_qst: 1
+
+two:
+  province: MyString
+  current_gst: 1
+  current_hst: 1
+  current_pst: 1
+  current_qst: 1
