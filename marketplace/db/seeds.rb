@@ -21,11 +21,11 @@
 #   current_qst: 0
 # )
 
-User.create!(
-  user_name: "Chris",
-  password: "password",
-  email: "chrissmithart@proton.me",
-  description: "DM, Artist, Programmer.",
-  address: "888 Mulvey Avenue",
-  tax_rate_by_location_id: TaxRateByLocation.where(province: "Manitoba").first.id
-)
+# User.create!(
+#   user_name: "Chris",
+#   password: "password",
+#   email: "chrissmithart@proton.me",
+#   description: "DM, Artist, Programmer.",
+#   address: "888 Mulvey Avenue",
+#   tax_rate_by_location_id: TaxRateByLocation.where(province: "Manitoba").first.id
+# )
