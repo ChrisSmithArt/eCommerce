@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time_of_sale_gst: 1
+  time_of_sale_hst: 1
+  time_of_sale_pst: 1
+  time_of_sale_qst: 1
+  stripe_item_id: MyString
+  user: one
+
+two:
+  time_of_sale_gst: 1
+  time_of_sale_hst: 1
+  time_of_sale_pst: 1
+  time_of_sale_qst: 1
+  stripe_item_id: MyString
+  user: two
