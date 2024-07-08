@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_205335) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_210958) do
   create_table "bookings", force: :cascade do |t|
     t.text "booking_description"
     t.string "google_forms_link"
@@ -39,6 +39,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_205335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "order_item_statuses", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "service_offers", force: :cascade do |t|
