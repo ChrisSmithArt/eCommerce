@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_201357) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_202532) do
+  create_table "service_types", force: :cascade do |t|
+    t.string "service_type_name"
+    t.text "service_type_description"
+    t.boolean "meeting_required"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tax_rate_by_locations", force: :cascade do |t|
     t.string "province"
     t.integer "current_gst"
