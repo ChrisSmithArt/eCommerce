@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_205057) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_205335) do
   create_table "bookings", force: :cascade do |t|
     t.text "booking_description"
     t.string "google_forms_link"
@@ -21,6 +21,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_205057) do
     t.datetime "updated_at", null: false
     t.index ["service_offer_id"], name: "index_bookings_on_service_offer_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "cart_id", null: false
+    t.integer "service_offer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["service_offer_id"], name: "index_cart_items_on_service_offer_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "total"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "service_offers", force: :cascade do |t|
@@ -70,6 +88,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_205057) do
 
   add_foreign_key "bookings", "service_offers"
   add_foreign_key "bookings", "users"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "service_offers"
+  add_foreign_key "carts", "users"
   add_foreign_key "service_offers", "service_types"
   add_foreign_key "service_offers", "users"
   add_foreign_key "users", "tax_rate_by_locations"
