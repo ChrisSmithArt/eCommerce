@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price_before_tax: 1
+  user: one
+  service_offer: one
+  order_details: one
+  booking: one
+  order_item_status: one
+
+two:
+  price_before_tax: 1
+  user: two
+  service_offer: two
+  order_details: two
+  booking: two
+  order_item_status: two
