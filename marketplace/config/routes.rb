@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
-  resources :users
+  resources :users do
+    resources :tax_rate_by_locations
+  end
+
   resources :service_offers
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
