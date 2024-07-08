@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_005438) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_201357) do
   create_table "tax_rate_by_locations", force: :cascade do |t|
     t.string "province"
     t.integer "current_gst"
@@ -21,4 +21,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_005438) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "user_name"
+    t.string "password"
+    t.string "email"
+    t.text "description"
+    t.string "address"
+    t.integer "tax_rate_by_location_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tax_rate_by_location_id"], name: "index_users_on_tax_rate_by_location_id"
+  end
+
+  add_foreign_key "users", "tax_rate_by_locations"
 end
