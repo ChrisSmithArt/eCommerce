@@ -10,3 +10,13 @@
 
 
 #provincal sales tax api https://api.salestaxapi.ca/v2/province/all
+#
+
+
+# TaxRateByLocation.create!(
+#   province: "Alberta",
+#   current_gst: 5,
+#   current_hst: 0,
+#   current_pst: 0,
+#   current_qst: 0
+# )

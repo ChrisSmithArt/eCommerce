@@ -56,3 +56,30 @@ FOREIGN KEY ("service_type_id")
   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240708202950') RETURNING "version"[0m
   [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTaxRateByLocation Create (1.8ms)[0m  [1m[32mINSERT INTO "tax_rate_by_locations" ("province", "current_gst", "current_hst", "current_pst", "current_qst", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["province", "Manitoba"], ["current_gst", 5], ["current_hst", 0], ["current_pst", 7], ["current_qst", 0], ["created_at", "2024-07-08 20:42:24.726058"], ["updated_at", "2024-07-08 20:42:24.726058"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" ORDER BY "tax_rate_by_locations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTaxRateByLocation Create (2.3ms)[0m  [1m[32mINSERT INTO "tax_rate_by_locations" ("province", "current_gst", "current_hst", "current_pst", "current_qst", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["province", "Alberta"], ["current_gst", 5], ["current_hst", 0], ["current_pst", 0], ["current_qst", 0], ["created_at", "2024-07-08 20:43:28.770237"], ["updated_at", "2024-07-08 20:43:28.770237"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" ORDER BY "tax_rate_by_locations"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."province" = ? /* loading for pp */ LIMIT ?[0m  [["province", "Manitoba"], ["LIMIT", 11]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBookings (20240708205057)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "booking_description" text, "google_forms_link" varchar, "caldotcom_link" varchar, "user_id" integer NOT NULL, "service_offer_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_ef0571f117"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_3800ae57ff"
+FOREIGN KEY ("service_offer_id")
+  REFERENCES "service_offers" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_bookings_on_user_id" ON "bookings" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_bookings_on_service_offer_id" ON "bookings" ("service_offer_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240708205057') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

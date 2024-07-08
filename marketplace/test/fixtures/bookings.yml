@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_description: MyText
+  google_forms_link: MyString
+  caldotcom_link: MyString
+  user: one
+  service_offer: one
+
+two:
+  booking_description: MyText
+  google_forms_link: MyString
+  caldotcom_link: MyString
+  user: two
+  service_offer: two
