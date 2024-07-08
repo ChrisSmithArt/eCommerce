@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_221811) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_222217) do
   create_table "bookings", force: :cascade do |t|
     t.text "booking_description"
     t.string "google_forms_link"
@@ -39,6 +39,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_221811) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "order_item_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_item_id"], name: "index_likes_on_order_item_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "order_details", force: :cascade do |t|
@@ -125,6 +134,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_221811) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "service_offers"
   add_foreign_key "carts", "users"
+  add_foreign_key "likes", "order_items"
+  add_foreign_key "likes", "users"
   add_foreign_key "order_details", "users"
   add_foreign_key "order_items", "bookings"
   add_foreign_key "order_items", "order_details", column: "order_details_id"
