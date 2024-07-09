@@ -1,13 +1,12 @@
 <%= render "application/header" %>
 
-<h1>ServiceOffers#show</h1>
-<p>Find me in app/views/service_offers/show.html.erb</p>
 
 
 <h2> <%= link_to @service_offer.user.user_name, @service_offer.user %>'s <%= @service_offer.service_offer_name %></h2>
 <div> <%= @service_offer.service_offer_notes %> </div>
 
+<div class="bg-gray-400 rounded-lg mx-auto p-5">
 <%= render @service_offer, full: true %>
-
+</div>
 
 <%= render "application/footer" %>

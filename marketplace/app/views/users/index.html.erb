@@ -2,13 +2,14 @@
 <%= render "application/header", search: true %>
 
 
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
 
-
-
+<div class="grid grid-cols-3 grid-flow-row gap-4 bg-gray-400 rounded-lg mx-auto p-5">
 <%= render @users %>
+</div>
 
+<div class="mx-auto">
 <%= paginate @users %>
+</div>
+
 
 <%= render "application/footer" %>

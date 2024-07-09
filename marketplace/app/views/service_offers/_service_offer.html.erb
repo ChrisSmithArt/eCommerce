@@ -1,8 +1,8 @@
 
 
-
+<div class="bg-gray-200 rounded-lg shadow-2xl p-2">
 <% if local_assigns[:full] %>
-    <div>
+    <div class="flex justify-between">
         <div>
             <div>
                 <span><%= link_to service_offer.service_offer_name, service_offer%></span> 
@@ -16,7 +16,7 @@
     </div>
 <% else %>
     <div>
-        <div>
+        <div class="flex justify-between">
             <%= service_offer.user.user_name%>'s Profile Pic
         </div>
         <div>
@@ -27,3 +27,4 @@
         </div>
     </div>
 <% end %>
+</div>

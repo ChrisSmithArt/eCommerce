@@ -1,4 +1,4 @@
-<div>
+<div class="bg-gray-200 rounded-lg shadow-2xl">
     <div>
         Profile Pic
     </div>
@@ -6,6 +6,6 @@
         <%= link_to user.user_name, user %>
     </div>
     <div>
-        Likes
+        <%= user.likes.count %> Likes
     </div>
 </div>
