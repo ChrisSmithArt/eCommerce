@@ -891,3 +891,230 @@ Processing by ServiceOffersController#show as HTML
 Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 1879)
 
 
+Started GET "/service_offers/" for 127.0.0.1 at 2024-07-08 19:02:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiceOffersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 1.2ms | Allocations: 240)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:9
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:9
+  Rendered collection of service_offers/_service_offer.html.erb [1 times] (Duration: 32.1ms | Allocations: 11009)
+  Rendered application/_footer.html.erb (Duration: 0.9ms | Allocations: 192)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 121.4ms | Allocations: 28100)
+  Rendered layout layouts/application.html.erb (Duration: 257.1ms | Allocations: 63582)
+Completed 200 OK in 298ms (Views: 259.7ms | ActiveRecord: 4.7ms | Allocations: 74901)
+
+
+Started GET "/service_offers/" for 127.0.0.1 at 2024-07-08 19:03:04 -0500
+Processing by ServiceOffersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 0.5ms | Allocations: 188)
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:3
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:9
+  Rendered collection of service_offers/_service_offer.html.erb [1 times] (Duration: 41.9ms | Allocations: 16966)
+  Rendered application/_footer.html.erb (Duration: 0.7ms | Allocations: 184)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 53.5ms | Allocations: 23154)
+  Rendered layout layouts/application.html.erb (Duration: 71.3ms | Allocations: 38860)
+Completed 200 OK in 81ms (Views: 70.4ms | ActiveRecord: 3.3ms | Allocations: 41222)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 19:03:07 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.3ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1362)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 2725)
+
+
+Started GET "/users/" for 127.0.0.1 at 2024-07-08 19:04:02 -0500
+  
+SyntaxError (/home/chris/projects/rubyrailCourse/ecomm/marketplace/config/routes.rb:20: syntax error, unexpected end-of-input, expecting `end' or dummy end):
+  
+config/routes.rb:20: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/users/" for 127.0.0.1 at 2024-07-08 19:04:16 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 0.8ms | Allocations: 188)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:10
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 1.3ms | Allocations: 206)
+  Rendered application/_footer.html.erb (Duration: 1.4ms | Allocations: 184)
+  Rendered users/index.html.erb within layouts/application (Duration: 22.7ms | Allocations: 5768)
+  Rendered layout layouts/application.html.erb (Duration: 82.5ms | Allocations: 21449)
+Completed 200 OK in 94ms (Views: 81.3ms | ActiveRecord: 4.4ms | Allocations: 23460)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-08 19:04:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.5ms | Allocations: 26)
+  Rendered users/show.html.erb within layouts/application (Duration: 60.7ms | Allocations: 10176)
+  Rendered layout layouts/application.html.erb (Duration: 64.1ms | Allocations: 11442)
+Completed 200 OK in 74ms (Views: 64.2ms | ActiveRecord: 1.7ms | Allocations: 12754)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-08 19:04:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 595)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1833)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 2438)
+
+
+Started GET "/service_offers/" for 127.0.0.1 at 2024-07-08 19:05:33 -0500
+Processing by ServiceOffersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 0.5ms | Allocations: 188)
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:3
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:9
+  Rendered collection of service_offers/_service_offer.html.erb [1 times] (Duration: 32.2ms | Allocations: 12030)
+  Rendered application/_footer.html.erb (Duration: 0.8ms | Allocations: 186)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 48.2ms | Allocations: 18169)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 33853)
+Completed 200 OK in 78ms (Views: 65.2ms | ActiveRecord: 4.0ms | Allocations: 36205)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 19:05:34 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1152)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1243)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 2574)
+
+
+  
+ActionView::Template::Error (undefined method `description' for an instance of ServiceOffer):
+    4: 
+    5: <h2> <%= @service_offer.service_offer_name %></h2>
+    6: 
+    7: <div> <%= @service_offer.description %></div>
+    8: 
+    9: 
+   10: <div> <%= @service_offer.user.user_name %></div>
+  
+app/views/service_offers/show.html.erb:7
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 19:06:22 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.3ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/show.html.erb:12
+  Rendered application/_footer.html.erb (Duration: 1.0ms | Allocations: 199)
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 28.0ms | Allocations: 6897)
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 22568)
+Completed 200 OK in 152ms (Views: 59.6ms | ActiveRecord: 4.8ms | Allocations: 30579)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 19:07:04 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.3ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/show.html.erb:12
+  Rendered application/_footer.html.erb (Duration: 1.7ms | Allocations: 199)
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 28.9ms | Allocations: 6877)
+  Rendered layout layouts/application.html.erb (Duration: 63.3ms | Allocations: 22551)
+Completed 200 OK in 100ms (Views: 64.8ms | ActiveRecord: 6.6ms | Allocations: 30562)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 19:07:14 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/show.html.erb:12
+  Rendered application/_footer.html.erb (Duration: 1.0ms | Allocations: 199)
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 19.4ms | Allocations: 6874)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 22552)
+Completed 200 OK in 80ms (Views: 44.8ms | ActiveRecord: 4.2ms | Allocations: 30597)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 19:07:26 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/show.html.erb:12
+  Rendered application/_footer.html.erb (Duration: 1.2ms | Allocations: 203)
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 30.3ms | Allocations: 6914)
+  Rendered layout layouts/application.html.erb (Duration: 72.2ms | Allocations: 22607)
+Completed 200 OK in 101ms (Views: 75.2ms | ActiveRecord: 5.2ms | Allocations: 30636)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 19:08:21 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/show.html.erb:12
+  Rendered application/_footer.html.erb (Duration: 0.8ms | Allocations: 186)
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 6949)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 22635)
+Completed 200 OK in 67ms (Views: 46.0ms | ActiveRecord: 4.3ms | Allocations: 30646)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-08 19:08:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.5ms | Allocations: 26)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.6ms | Allocations: 5988)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 7239)
+Completed 200 OK in 26ms (Views: 20.7ms | ActiveRecord: 1.0ms | Allocations: 8661)
+
+

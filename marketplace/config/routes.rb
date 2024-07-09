@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
-  resources :users do
-    resources :tax_rate_by_locations
-  end
+  resources :users
+
 
   resources :service_offers
 
