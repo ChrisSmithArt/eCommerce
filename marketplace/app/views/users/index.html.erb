@@ -1,5 +1,5 @@
 
-<%= render "application/header" %>
+<%= render "application/header", search: true %>
 
 
 <h1>Users#index</h1>
@@ -9,5 +9,6 @@
 
 <%= render @users %>
 
+<%= paginate @users %>
 
 <%= render "application/footer" %>

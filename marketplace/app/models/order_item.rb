@@ -4,4 +4,6 @@ class OrderItem < ApplicationRecord
   belongs_to :order_details
   belongs_to :booking
   belongs_to :order_item_status
+
+  has_one :like
 end

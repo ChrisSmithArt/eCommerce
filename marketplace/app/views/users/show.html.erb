@@ -1,3 +1,5 @@
+<%= render "application/header" %>
+
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
@@ -10,6 +12,6 @@
 <div>From <%= @user.tax_rate_by_location.province %></div>
 
 <h2> <%= @user.user_name %>'s Service Offers</h2>
-<%= render @user.service_offers%>
+<%= render @user.service_offers, full: true%>
 
 <%= render "application/footer" %>

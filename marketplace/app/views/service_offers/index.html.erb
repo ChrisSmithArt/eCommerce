@@ -1,12 +1,13 @@
 
-<%= render "application/header" %>
+<%= render "application/header", search: true %>
 
 <h1>ServiceOffers#index</h1>
 <p>Find me in app/views/service_offers/index.html.erb</p>
 
 
 
-<%= render @service_offers, full: true %>
+<%= render @service_offers %>
 
+<%= paginate @service_offers %>
 
 <%= render "application/footer" %>

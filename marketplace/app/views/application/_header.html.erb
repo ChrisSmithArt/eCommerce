@@ -9,9 +9,11 @@
                 <%= link_to "Service Offers", "/service_offers/" %>
             </div>
         </div>
-        <div>
-            Search Bar
-        </div>
+        <% if local_assigns[:search] %>
+            <div>
+                Search Bar
+            </div>
+        <% end %>
     </div>
     <div>
         <div>
