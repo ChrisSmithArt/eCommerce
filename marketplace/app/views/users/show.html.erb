@@ -7,7 +7,9 @@
 <div> <%= @user.description %></div>
 
 
-<div> <%= @user.tax_rate_by_location.province %></div>
+<div>From <%= @user.tax_rate_by_location.province %></div>
 
+<h2> <%= @user.user_name %>'s Service Offers</h2>
+<%= render @user.service_offers%>
 
 <%= render "application/footer" %>

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
-  resources :users
+  resources :users do
+    resources :service_offers
+  end
 
 
   resources :service_offers

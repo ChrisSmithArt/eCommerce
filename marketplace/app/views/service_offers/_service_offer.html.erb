@@ -1,11 +1,32 @@
-<div>
+
+
+
+<% if local_assigns[:full] %>
     <div>
-        <%= service_offer.user.user_name%>'s Profile Pic
+        <div>
+            <%= service_offer.user.user_name%>'s Profile Pic
+        </div>
+        <div>
+            <%= link_to service_offer.service_offer_name, service_offer %>
+        </div>
+        <div>
+            <%= service_offer.service_type.service_type_name%>
+        </div>
     </div>
+<% else %>
     <div>
-        <%= link_to service_offer.service_offer_name, service_offer %>
+        <div>
+            <div>
+                <span><%= service_offer.service_offer_name%></span> 
+                <span>at $<%= service_offer.service_offer_price.to_f/100%> with</span>
+                <span><%= service_offer.slot_availabilty%> Slots</span>
+            </div>
+            <div>
+                <span><%= service_offer.service_offer_notes%></span> 
+            </div>
+        </div>
+        <div>
+            Add to Cart <input type="number" id="quantity" name="quantity" min="0" max=<%=service_offer.slot_availabilty%> />
+        </div>
     </div>
-    <div>
-        <%= service_offer.service_type.service_type_name%>
-    </div>
-</div>
+<% end %>
