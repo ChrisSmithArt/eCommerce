@@ -29,3 +29,22 @@
 #   address: "888 Mulvey Avenue",
 #   tax_rate_by_location_id: TaxRateByLocation.where(province: "Manitoba").first.id
 # )
+#
+
+
+# ServiceType.create!(
+#   service_type_name: "Mentoring Session",
+#   service_type_description: "A meeting to mentor someone on a specific topic.",
+#   meeting_required: true
+# )
+
+# ServiceOffer.create!(
+#   service_offer_name: "Boss Monster Design",
+#   service_offer_price: 500,
+#   service_offer_notes: "Mentoring you on how to design Boss Monsters for your TTRPG games.",
+#   google_forms_link: "google.com",
+#   caldotcom_link: "cal.com",
+#   slot_availabilty: 3,
+#   user_id: User.first.id,
+#   service_type_id: ServiceType.first.id
+# )

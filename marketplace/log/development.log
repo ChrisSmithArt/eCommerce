@@ -805,3 +805,89 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.1ms | Allocations: 2261)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mServiceType Create (1.9ms)[0m  [1m[32mINSERT INTO "service_types" ("service_type_name", "service_type_description", "meeting_required", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["service_type_name", "Mentoring Session"], ["service_type_description", "A meeting to mentor someone on a specific topic."], ["meeting_required", 1], ["created_at", "2024-07-08 23:53:12.708841"], ["updated_at", "2024-07-08 23:53:12.708841"]]
+  [1m[36mTRANSACTION (21.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" ORDER BY "service_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" ORDER BY "service_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mServiceOffer Create (0.3ms)[0m  [1m[32mINSERT INTO "service_offers" ("service_offer_name", "service_offer_price", "service_offer_notes", "google_forms_link", "caldotcom_link", "slot_availabilty", "user_id", "service_type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["service_offer_name", "Boss Monster Design"], ["service_offer_price", 500], ["service_offer_notes", "Mentoring you on how to design Boss Monsters for your TTRPG games."], ["google_forms_link", "google.com"], ["caldotcom_link", "cal.com"], ["slot_availabilty", 3], ["user_id", 1], ["service_type_id", 1], ["created_at", "2024-07-08 23:57:14.210590"], ["updated_at", "2024-07-08 23:57:14.210590"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" ORDER BY "service_offers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" ORDER BY "service_offers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" ORDER BY "service_offers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/users/" for 127.0.0.1 at 2024-07-08 18:59:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 0.9ms | Allocations: 240)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:10
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 0.9ms | Allocations: 335)
+  Rendered application/_footer.html.erb (Duration: 0.6ms | Allocations: 192)
+  Rendered users/index.html.erb within layouts/application (Duration: 49.9ms | Allocations: 15120)
+  Rendered layout layouts/application.html.erb (Duration: 173.8ms | Allocations: 50637)
+Completed 200 OK in 208ms (Views: 176.0ms | ActiveRecord: 2.7ms | Allocations: 61596)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-07-08 18:59:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mTaxRateByLocation Load (0.4ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+  Rendered users/show.html.erb within layouts/application (Duration: 40.9ms | Allocations: 11304)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 12573)
+Completed 200 OK in 57ms (Views: 45.2ms | ActiveRecord: 1.5ms | Allocations: 15133)
+
+
+Started GET "/service_offers/" for 127.0.0.1 at 2024-07-08 18:59:53 -0500
+Processing by ServiceOffersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 0.1ms | Allocations: 26)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:9
+  Rendered collection of service_offers/_service_offer.html.erb [1 times] (Duration: 1.1ms | Allocations: 195)
+  Rendered application/_footer.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 97.5ms | Allocations: 12132)
+  Rendered layout layouts/application.html.erb (Duration: 100.8ms | Allocations: 13415)
+Completed 200 OK in 114ms (Views: 101.6ms | ActiveRecord: 1.8ms | Allocations: 15116)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 18:59:55 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 1364)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 2696)
+
+
+Started GET "/service_offers/1" for 127.0.0.1 at 2024-07-08 18:59:57 -0500
+Processing by ServiceOffersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers" WHERE "service_offers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/service_offers_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/show.html.erb within layouts/application
+  Rendered service_offers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 1264)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 1879)
+
+
