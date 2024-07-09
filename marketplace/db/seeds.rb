@@ -32,6 +32,15 @@
 #
 
 
+# User.create!(
+#   user_name: "Zach",
+#   password: "heroman",
+#   email: "zmschuster@gmail.com",
+#   description: "Skater, Artist, fun guy, super tall.",
+#   address: "Somewhere...",
+#   tax_rate_by_location_id: TaxRateByLocation.where(province: "Saskatchewan").first.id
+# )
+
 # ServiceType.create!(
 #   service_type_name: "Mentoring Session",
 #   service_type_description: "A meeting to mentor someone on a specific topic.",
@@ -48,3 +57,4 @@
 #   user_id: User.first.id,
 #   service_type_id: ServiceType.first.id
 # )
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

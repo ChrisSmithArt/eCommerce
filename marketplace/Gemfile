@@ -29,6 +29,19 @@ gem "jbuilder"
 # Paginate
 gem 'kaminari'
 
+gem 'ransack'
+
+gem 'sassc-rails'
+
+#Active Admin
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

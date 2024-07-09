@@ -6,4 +6,8 @@ class OrderItem < ApplicationRecord
   belongs_to :order_item_status
 
   has_one :like
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["booking_id", "created_at", "id", "id_value", "order_details_id", "order_item_status_id", "price_before_tax", "service_offer_id", "updated_at", "user_id"]
+  end
 end
