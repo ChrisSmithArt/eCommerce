@@ -1,6 +1,10 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# frozen_string_literal: true
+
+# This file should ensure the existence of records required to run the application in
+# every environment (production, development, test). The code here should be idempotent
+# so that it can be executed at any point in every environment.
+# The data can then be loaded with the bin/rails db:seed command
+# (or created alongside the database with db:setup).
 #
 # Example:
 #
@@ -8,10 +12,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
-#provincal sales tax api https://api.salestaxapi.ca/v2/province/all
+# provincal sales tax api https://api.salestaxapi.ca/v2/province/all
 #
-
 
 # TaxRateByLocation.create!(
 #   province: "Alberta",
@@ -30,7 +32,6 @@
 #   tax_rate_by_location_id: TaxRateByLocation.where(province: "Manitoba").first.id
 # )
 #
-
 
 # User.create!(
 #   user_name: "Zach",
@@ -57,4 +58,5 @@
 #   user_id: User.first.id,
 #   service_type_id: ServiceType.first.id
 # )
-# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation:
+# 'password')if Rails.env.development?

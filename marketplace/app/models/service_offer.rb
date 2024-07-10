@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# model for a Service Offer
 class ServiceOffer < ApplicationRecord
   belongs_to :user
   belongs_to :service_type
@@ -6,11 +9,12 @@ class ServiceOffer < ApplicationRecord
   has_many :cart_items
   has_many :order_items
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["caldotcom_link", "created_at", "google_forms_link", "id", "id_value", "service_offer_name", "service_offer_notes", "service_offer_price", "service_type_id", "slot_availabilty", "updated_at", "user_id"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[caldotcom_link created_at google_forms_link id id_value service_offer_name
+       service_offer_notes service_offer_price service_type_id slot_availabilty updated_at user_id]
   end
 
-  def self.ransackable_associations(auth_object = nil)
-    ["bookings", "cart_items", "order_items", "service_type", "user"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[bookings cart_items order_items service_type user]
   end
 end

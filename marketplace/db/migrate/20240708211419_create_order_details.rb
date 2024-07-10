@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# A migration for creating the Order Details table
 class CreateOrderDetails < ActiveRecord::Migration[7.1]
   def change
     create_table :order_details do |t|

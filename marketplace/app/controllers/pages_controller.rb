@@ -1,7 +1,8 @@
-class PagesController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def about
-  end
+# controller for pages that do not reference a specific model
+class PagesController < ApplicationController
+  def index; end
+
+  def about; end
 end

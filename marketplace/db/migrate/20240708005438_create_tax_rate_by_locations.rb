@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# A migration for creating the Tax Rate by Location table
 class CreateTaxRateByLocations < ActiveRecord::Migration[7.1]
   def change
     create_table :tax_rate_by_locations do |t|

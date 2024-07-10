@@ -1,0 +1,12 @@
+<%= render "application/header" %>
+
+
+
+<h2> <%=@service_type.service_type_name%></h2>
+<div> <%= @service_type.service_type_description%> </div>
+
+<div class="bg-gray-400 rounded-lg mx-auto p-5">
+<%= render @service_type.service_offers%>
+</div>
+
+<%= render "application/footer" %>

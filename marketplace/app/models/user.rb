@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# model for Users, which are both Customers and Providers.
 class User < ApplicationRecord
   belongs_to :tax_rate_by_location
 
@@ -8,10 +11,16 @@ class User < ApplicationRecord
   has_many :order_details
   has_many :order_items
 
-  def self.ransackable_associations(auth_object = nil)
-    ["bookings", "cart", "likes", "order_details", "order_items", "service_offers", "tax_rate_by_location"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[bookings cart likes order_details order_items service_offers tax_rate_by_location]
   end
-  def self.ransackable_attributes(auth_object = nil)
-    ["address", "created_at", "description", "email", "id", "id_value", "password", "tax_rate_by_location_id", "updated_at", "user_name"]
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[address created_at description email id id_value password tax_rate_by_location_id
+       updated_at user_name]
+  end
+
+  def display_name
+    user_name
   end
 end

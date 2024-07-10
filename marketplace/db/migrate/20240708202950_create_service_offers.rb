@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# A migration for creating the Service Offer table
 class CreateServiceOffers < ActiveRecord::Migration[7.1]
   def change
     create_table :service_offers do |t|
