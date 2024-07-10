@@ -7,6 +7,7 @@ class ServiceTypesController < ApplicationController
 
   def show
     @service_type = ServiceType.find(params[:id])
+    @service_types = ServiceType.all
     add_breadcrumb(@service_type.service_type_name, @service_type)
   end
 
