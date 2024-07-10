@@ -25,6 +25,22 @@
     </div> 
 </header>
 
-<nav class="flex">
-  <%= breadcrumbs.render(format: :inline, separator: "|") %>
+<nav>
+  <ul class="breadcrumbs flex space-x-4 list-none">
+    <% breadcrumbs.each do |crumb| %>
+     <li>
+      <% if crumb.link? %>
+        <%= link_to crumb.name, crumb.path, class: "breadcrumb-link" %>
+      <% else %>
+        <span class="breadcrumb-page">
+          <%= crumb.name %>
+        </span>
+      <% end %>
+
+      <% unless crumb == breadcrumbs.last %>
+        <span class="breadcrumb-separator">/</span>
+      <% end %>
+     </li>
+    <% end %>
+  </ul>
 </nav>

@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :add_initial_breadcrumbs
+  helper_method :breadcrumbs
 
-  private
+  def breadcrumbs
+    @breadcrumbs ||= []
+  end
 
-  def add_initial_breadcrumbs
-    breadcrumbs.add "Home", root_path
+  def add_breadcrumb(name, path = nil)
+    breadcrumbs << Breadcrumb.new(name, path)
   end
 end
