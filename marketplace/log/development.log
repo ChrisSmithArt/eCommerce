@@ -29427,3 +29427,610 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.5ms | Allocations: 14077)
 
 
+Started GET "/users?q%5Buser_name_cont%5D=chris&commit=Search" for 127.0.0.1 at 2024-07-10 16:58:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"user_name_cont"=>"chris"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 6.9ms | Allocations: 4499)
+  Rendered users/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4940)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5057)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.9ms | Allocations: 11905)
+
+
+  
+ActionView::Template::Error (undefined method `user_name_or_service_offer_description_cont' for an instance of Ransack::Search):
+    24:                 <%= search_form_for @q do |f| %>
+    25:                   <%= search_form_for @q do |f| %>
+    26:                     <%= f.label :user_name_or_service_offer_description_cont %>
+    27:                     <%= f.search_field :user_name_or_service_offer_description_cont %>
+    28:                     <%= f.submit %>
+    29:                   <%end%>
+    30:                 <% end %>
+  
+app/views/application/_header.html.erb:27
+app/views/application/_header.html.erb:25
+app/views/application/_header.html.erb:24
+app/views/users/index.html.erb:2
+Started GET "/users?q%5Buser_name_cont%5D=chris&commit=Search" for 127.0.0.1 at 2024-07-10 16:58:41 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"user_name_cont"=>"chris"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.4ms | Allocations: 485)
+  Rendered application/_categories.html.erb (Duration: 15.9ms | Allocations: 7806)
+  Rendered application/_header.html.erb (Duration: 20.4ms | Allocations: 10104)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE "users"."user_name" LIKE '%chris%' LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/_user.html.erb:9
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 20.1ms | Allocations: 5065)
+  Rendered application/_footer.html.erb (Duration: 1.2ms | Allocations: 177)
+  Rendered users/index.html.erb within layouts/application (Duration: 65.0ms | Allocations: 24397)
+  Rendered layout layouts/application.html.erb (Duration: 565.9ms | Allocations: 117871)
+Completed 200 OK in 577ms (Views: 566.2ms | ActiveRecord: 5.7ms | Allocations: 120563)
+
+
+Started GET "/users?q%5Buser_name_or_description_cont%5D=artist&commit=Search" for 127.0.0.1 at 2024-07-10 16:58:46 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"user_name_or_description_cont"=>"artist"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (1.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.8ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 4.2ms | Allocations: 920)
+  Rendered application/_header.html.erb (Duration: 6.5ms | Allocations: 2059)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE ("users"."user_name" LIKE '%artist%' OR "users"."description" LIKE '%artist%') LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/_user.html.erb:9
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/_user.html.erb:9
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 5.2ms | Allocations: 1151)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 4139)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 14490)
+Completed 200 OK in 38ms (Views: 32.9ms | ActiveRecord: 2.0ms | Allocations: 15237)
+
+
+Started GET "/users?q%5Buser_name_or_description_cont%5D=Dm&commit=Search" for 127.0.0.1 at 2024-07-10 16:58:48 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"user_name_or_description_cont"=>"Dm"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.5ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.7ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 4.3ms | Allocations: 918)
+  Rendered application/_header.html.erb (Duration: 9.2ms | Allocations: 2052)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE ("users"."user_name" LIKE '%Dm%' OR "users"."description" LIKE '%Dm%') LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/_user.html.erb:9
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/_user.html.erb:9
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/_user.html.erb:9
+  Rendered collection of users/_user.html.erb [3 times] (Duration: 9.6ms | Allocations: 1720)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 24.3ms | Allocations: 4690)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 14938)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 1.6ms | Allocations: 15660)
+
+
+Started GET "/users?q%5Buser_name_or_description_cont%5D=player&commit=Search" for 127.0.0.1 at 2024-07-10 16:58:51 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"user_name_or_description_cont"=>"player"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.9ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.3ms | Allocations: 918)
+  Rendered application/_header.html.erb (Duration: 7.0ms | Allocations: 2052)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE ("users"."user_name" LIKE '%player%' OR "users"."description" LIKE '%player%') LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/_user.html.erb:9
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/users/_user.html.erb:9
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 5.9ms | Allocations: 1151)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 4106)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 14356)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.8ms | Allocations: 15078)
+
+
+Started GET "/users?q%5Buser_name_or_description_cont%5D=chris&commit=Search" for 127.0.0.1 at 2024-07-10 16:58:54 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"user_name_or_description_cont"=>"chris"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.3ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 4.3ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 6.9ms | Allocations: 2048)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE ("users"."user_name" LIKE '%chris%' OR "users"."description" LIKE '%chris%') LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/_user.html.erb:9
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 2.4ms | Allocations: 582)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3520)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 13779)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.5ms | Allocations: 14492)
+
+
+Started GET "/users?q%5Buser_name_or_description_cont%5D=andrew&commit=Search" for 127.0.0.1 at 2024-07-10 16:58:57 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"user_name_or_description_cont"=>"andrew"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.8ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.0ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 5.4ms | Allocations: 2048)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE ("users"."user_name" LIKE '%andrew%' OR "users"."description" LIKE '%andrew%') LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/_user.html.erb:9
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 2.9ms | Allocations: 582)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 3519)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 13754)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.5ms | Allocations: 14467)
+
+
+Started GET "/service_offers/" for 127.0.0.1 at 2024-07-10 16:58:58 -0500
+Processing by ServiceOffersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 4.0ms | Allocations: 3420)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3660)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3751)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 4659)
+
+
+  
+ActionView::Template::Error (undefined method `service_offer_name_or_service_offer_description_cont' for an instance of Ransack::Search):
+    14:                 <%= search_form_for @q do |f| %>
+    15:                   <%= search_form_for @q do |f| %>
+    16:                       <%= f.label :service_offer_name_or_service_offer_description_cont %>
+    17:                       <%= f.search_field :service_offer_name_or_service_offer_description_cont %>
+    18:                     <%= f.submit %>
+    19:                   <%end%>
+    20:                 <% end %>
+  
+app/views/application/_header.html.erb:17
+app/views/application/_header.html.erb:15
+app/views/application/_header.html.erb:14
+app/views/service_offers/index.html.erb:2
+Started GET "/service_offers/" for 127.0.0.1 at 2024-07-10 16:59:37 -0500
+Processing by ServiceOffersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.7ms | Allocations: 420)
+  Rendered application/_categories.html.erb (Duration: 13.0ms | Allocations: 4098)
+  Rendered application/_header.html.erb (Duration: 21.1ms | Allocations: 6850)
+  [1m[36mServiceOffer Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [10 times] (Duration: 69.6ms | Allocations: 17394)
+  Rendered application/_footer.html.erb (Duration: 0.7ms | Allocations: 170)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 117.1ms | Allocations: 34313)
+  Rendered layout layouts/application.html.erb (Duration: 155.8ms | Allocations: 67915)
+Completed 200 OK in 167ms (Views: 153.5ms | ActiveRecord: 10.3ms | Allocations: 69883)
+
+
+Started GET "/service_offers?q%5Bservice_offer_name_or_service_offer_notes_cont%5D=boss&commit=Search" for 127.0.0.1 at 2024-07-10 16:59:50 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"q"=>{"service_offer_name_or_service_offer_notes_cont"=>"boss"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.0ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.6ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 6.3ms | Allocations: 2160)
+  [1m[36mServiceOffer Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" WHERE ("service_offers"."service_offer_name" LIKE '%boss%' OR "service_offers"."service_offer_notes" LIKE '%boss%') LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [2 times] (Duration: 8.7ms | Allocations: 2078)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 5158)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 15390)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.9ms | Allocations: 16199)
+
+
+Started GET "/service_offers?q%5Bservice_offer_name_or_service_offer_notes_cont%5D=map&commit=Search" for 127.0.0.1 at 2024-07-10 16:59:53 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"q"=>{"service_offer_name_or_service_offer_notes_cont"=>"map"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.6ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 2.4ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 4.6ms | Allocations: 2160)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" WHERE ("service_offers"."service_offer_name" LIKE '%map%' OR "service_offers"."service_offer_notes" LIKE '%map%') LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [2 times] (Duration: 6.8ms | Allocations: 1955)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 5026)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 15285)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.5ms | Allocations: 16056)
+
+
+Started GET "/service_offers?q%5Bservice_offer_name_or_service_offer_notes_cont%5D=draw&commit=Search" for 127.0.0.1 at 2024-07-10 16:59:57 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"q"=>{"service_offer_name_or_service_offer_notes_cont"=>"draw"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.9ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.3ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 6.7ms | Allocations: 2162)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" WHERE ("service_offers"."service_offer_name" LIKE '%draw%' OR "service_offers"."service_offer_notes" LIKE '%draw%') LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [3 times] (Duration: 14.6ms | Allocations: 2926)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 6012)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 16278)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.8ms | Allocations: 17048)
+
+
+Started GET "/service_offers?q%5Bservice_offer_name_or_service_offer_notes_cont%5D=chris&commit=Search" for 127.0.0.1 at 2024-07-10 17:00:01 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"q"=>{"service_offer_name_or_service_offer_notes_cont"=>"chris"}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.9ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.9ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 7.0ms | Allocations: 2160)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" WHERE ("service_offers"."service_offer_name" LIKE '%chris%' OR "service_offers"."service_offer_notes" LIKE '%chris%') LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 22)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3027)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 13281)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.4ms | Allocations: 14049)
+
+
+Started GET "/service_offers?q%5Bservice_offer_name_or_service_offer_notes_cont%5D=&commit=Search" for 127.0.0.1 at 2024-07-10 17:00:06 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"q"=>{"service_offer_name_or_service_offer_notes_cont"=>""}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.8ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.8ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 6.1ms | Allocations: 2143)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [10 times] (Duration: 112.9ms | Allocations: 9912)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 123.6ms | Allocations: 13010)
+  Rendered layout layouts/application.html.erb (Duration: 182.8ms | Allocations: 23237)
+Completed 200 OK in 186ms (Views: 181.9ms | ActiveRecord: 2.4ms | Allocations: 23619)
+
+
+Started GET "/service_offers?q%5Bservice_offer_name_or_service_offer_notes_cont%5D=&commit=Search" for 127.0.0.1 at 2024-07-10 17:00:38 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"q"=>{"service_offer_name_or_service_offer_notes_cont"=>""}, "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.3ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.7ms | Allocations: 420)
+  Rendered application/_categories.html.erb (Duration: 13.8ms | Allocations: 4094)
+  Rendered application/_header.html.erb (Duration: 21.9ms | Allocations: 6698)
+  [1m[36mServiceOffer Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [4 times] (Duration: 30.5ms | Allocations: 11057)
+  [1m[36mServiceOffer Count (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "service_offers"."id") FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.3ms | Allocations: 170)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 78.8ms | Allocations: 27916)
+  Rendered layout layouts/application.html.erb (Duration: 140.0ms | Allocations: 61096)
+Completed 200 OK in 151ms (Views: 139.8ms | ActiveRecord: 7.0ms | Allocations: 63142)
+
+
+Started GET "/service_offers?page=3&q%5Bservice_offer_name_or_service_offer_notes_cont%5D=" for 127.0.0.1 at 2024-07-10 17:00:40 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"page"=>"3", "q"=>{"service_offer_name_or_service_offer_notes_cont"=>""}}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.2ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.4ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 5.5ms | Allocations: 2145)
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 8]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [2 times] (Duration: 8.3ms | Allocations: 2016)
+  Rendered application/_footer.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 6791)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 17044)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.6ms | Allocations: 17474)
+
+
+Started GET "/service_offers?page=2&q%5Bservice_offer_name_or_service_offer_notes_cont%5D=" for 127.0.0.1 at 2024-07-10 17:00:41 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"service_offer_name_or_service_offer_notes_cont"=>""}}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.7ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 2.6ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 4.7ms | Allocations: 2143)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [4 times] (Duration: 18.5ms | Allocations: 4081)
+  [1m[36mServiceOffer Count (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "service_offers"."id") FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 32.0ms | Allocations: 9203)
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | Allocations: 19429)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 1.2ms | Allocations: 19854)
+
+
+Started GET "/service_offers?page=2&q%5Bservice_offer_name_or_service_offer_notes_cont%5D=" for 127.0.0.1 at 2024-07-10 17:00:45 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"service_offer_name_or_service_offer_notes_cont"=>""}}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.6ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 2.3ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 4.5ms | Allocations: 2143)
+  [1m[36mServiceOffer Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [4 times] (Duration: 17.8ms | Allocations: 4081)
+  [1m[36mServiceOffer Count (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "service_offers"."id") FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 32.8ms | Allocations: 9203)
+  Rendered layout layouts/application.html.erb (Duration: 56.9ms | Allocations: 19465)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 1.2ms | Allocations: 19890)
+
+
+Started GET "/service_offers?page=3&q%5Bservice_offer_name_or_service_offer_notes_cont%5D=" for 127.0.0.1 at 2024-07-10 17:00:48 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"page"=>"3", "q"=>{"service_offer_name_or_service_offer_notes_cont"=>""}}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.1ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.3ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 7.2ms | Allocations: 2145)
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 8]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [2 times] (Duration: 8.3ms | Allocations: 2016)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 6141)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 16414)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.5ms | Allocations: 16839)
+
+
+Started GET "/service_offers?q%5Bservice_offer_name_or_service_offer_notes_cont%5D=" for 127.0.0.1 at 2024-07-10 17:00:50 -0500
+Processing by ServiceOffersController#index as HTML
+  Parameters: {"q"=>{"service_offer_name_or_service_offer_notes_cont"=>""}}
+  Rendering layout layouts/application.html.erb
+  Rendering service_offers/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.9ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 2.8ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 5.0ms | Allocations: 2143)
+  [1m[36mServiceOffer Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "service_offers".* FROM "service_offers" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/service_offers/index.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:20
+  [1m[36mCACHE ServiceType Load (0.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types" WHERE "service_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/service_offers/_service_offer.html.erb:26
+  Rendered collection of service_offers/_service_offer.html.erb [4 times] (Duration: 14.5ms | Allocations: 3960)
+  [1m[36mServiceOffer Count (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "service_offers"."id") FROM "service_offers"[0m
+  ↳ app/views/service_offers/index.html.erb:10
+  Rendered application/_footer.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered service_offers/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 8611)
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 18847)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.9ms | Allocations: 19272)
+
+
