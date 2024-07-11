@@ -15,10 +15,10 @@
         </div>
     </div>
 <% else %>
-    <div>
-        <div class="flex justify-between">
-            <%= service_offer.user.user_name%>'s Profile Pic
-        </div>
+    <div class="flex items-center space-x-4">
+        <% if service_offer.user.image.attached? %>
+             <%= image_tag (url_for(service_offer.user.image)), class: "object-contain h-24 w-24 rounded-lg m-0" %>
+        <% end %>
         <div>
             <%= link_to service_offer.service_offer_name, service_offer %>
         </div>

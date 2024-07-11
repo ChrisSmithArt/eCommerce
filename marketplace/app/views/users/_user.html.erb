@@ -1,11 +1,14 @@
-<div class="bg-gray-200 rounded-lg shadow-2xl">
-    <div>
-        Profile Pic
-    </div>
-    <div>
-        <%= link_to user.user_name, user %>
-    </div>
-    <div>
-        <%= user.likes.count %> Likes
-    </div>
+<div class="bg-gray-200 rounded-lg shadow-2xl flex">
+
+        <% if user.image.attached? %>
+             <%= image_tag (url_for(user.image)), class: "object-contain h-48 w-48 rounded-lg" %>
+        <% end %>
+    <div class="self-center">
+        <div>
+            <%= link_to user.user_name, user %>
+        </div>
+        <div>
+            <%= user.likes.count %> Likes
+        </div>
+     </div>
 </div>
