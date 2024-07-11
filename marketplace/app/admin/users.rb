@@ -24,7 +24,7 @@ ActiveAdmin.register User do
       input :email
       input :description
       input :address
-      input :tax_rate_by_location_id
+      input :tax_rate_by_location
       input :image, :as => :file
     end
     actions do
