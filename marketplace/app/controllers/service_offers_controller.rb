@@ -8,7 +8,7 @@ class ServiceOffersController < ApplicationController
     # @service_offers = ServiceOffer.order(:service_type_id).page(params[:page]).per(4)
 
     @q = ServiceOffer.ransack(params[:q])
-    @service_offers = @q.result(distinct: true).page(params[:page]).per(4)
+    @service_offers = @q.result.page(params[:page]).per(4)
 
     @service_types = ServiceType.all
     add_breadcrumb("Service Offers", service_offers_path)
