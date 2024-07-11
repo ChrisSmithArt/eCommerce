@@ -16,8 +16,8 @@
                       <%= f.label :service_offer_name_or_service_offer_notes_cont %>
                       <%= f.search_field :service_offer_name_or_service_offer_notes_cont %>
                           
-                      <%= f.label :service_type_id, "Service Type" %>
-                      <%= f.collection_select :service_type_id, ServiceType.all, :id, :service_type_name, include_blank: true %>
+                      <%= f.label :service_type_id_eq, "Service Type" %>
+                      <%= f.collection_select :service_type_id_eq, ServiceType.all, :id, :service_type_name, include_blank: true %>
   
                     <%= f.submit %>
                   <%end%>
