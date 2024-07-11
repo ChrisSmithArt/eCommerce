@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   before_action :set_breadcrumbs
 
   def index
-    @users = User.order(:user_name).page(params[:page]).per(6)
+    # @users = User.order(:user_name).page(params[:page]).per(6)
+
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).page(params[:page]).per(6)
+
     @service_types = ServiceType.all
     add_breadcrumb("Users", users_path)
   end

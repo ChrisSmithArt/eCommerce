@@ -1,19 +1,39 @@
-<header class="flex justify-between">
+<header class="flex justify-evenly">
     <h1>AirDnD</h1> 
     <div>
         <div class="flex">
             <div class="mx-2">
-                <%= link_to "Providers", "/users/" %>
+                <%= link_to "Providers", "/users/", class: "text-center no-underline"%>
             </div>
             <div class="mx-2">
-                <%= link_to "Service Offers", "/service_offers/" %>
+                <%= link_to "Service Offers", "/service_offers/", class: "text-center no-underline"%>
             </div>
         </div>
-        <% if local_assigns[:search] %>
-            <div class="mx-2">
-                Search Bar
+        <% if local_assigns[:offer] %>
+            <div class="mx-2 text-center">
+                <%= search_form_for @q do |f| %>
+                  <%= search_form_for @q do |f| %>
+                      <%= f.label :service_offer_name_or_service_offer_notes_cont %>
+                      <%= f.search_field :service_offer_name_or_service_offer_notes_cont %>
+                          
+                      <%= f.label :service_type_id_eq, "Service Type" %>
+                      <%= f.collection_select :service_type_id_eq, ServiceType.all, :id, :service_type_name, include_blank: true %>
+  
+                    <%= f.submit %>
+                  <%end%>
+                <% end %>
             </div>
-        <% end %>
+        <% elsif local_assigns[:provider]  %>
+              <div class="mx-2 text-center">
+                <%= search_form_for @q do |f| %>
+                  <%= search_form_for @q do |f| %>
+                    <%= f.label :user_name_or_description_cont %>
+                    <%= f.search_field :user_name_or_description_cont %>
+                    <%= f.submit %>
+                  <%end%>
+                <% end %>
+            </div>
+          <% end %>
     </div>
     <div>
         <div class="mx-2">
