@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :order_details
   has_many :order_items
 
-  has_one_attached :image
+  has_one_attached :image do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, 100]
+  end
 
   def self.ransackable_associations(_auth_object = nil)
     %w[bookings cart likes order_details order_items service_offers tax_rate_by_location image_blob

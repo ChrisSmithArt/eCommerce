@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.order(:user_name).page(params[:page]).per(6)
 
-    @q = User.ransack(params[:q])
+    @q = User.order(:user_name).ransack(params[:q])
     @users = @q.result.page(params[:page]).per(6)
 
     @service_types = ServiceType.all
