@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # @users = User.order(:user_name).page(params[:page]).per(6)
 
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).page(params[:page]).per(6)
+    @users = @q.result.page(params[:page]).per(6)
 
     @service_types = ServiceType.all
     add_breadcrumb("Users", users_path)

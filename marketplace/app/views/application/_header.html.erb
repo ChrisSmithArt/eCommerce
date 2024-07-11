@@ -11,7 +11,6 @@
         </div>
         <% if local_assigns[:offer] %>
             <div class="mx-2 text-center">
-                <%= search_form_for @q do |f| %>
                   <%= search_form_for @q do |f| %>
                       <%= f.label :service_offer_name_or_service_offer_notes_cont %>
                       <%= f.search_field :service_offer_name_or_service_offer_notes_cont %>
@@ -21,16 +20,13 @@
   
                     <%= f.submit %>
                   <%end%>
-                <% end %>
             </div>
         <% elsif local_assigns[:provider]  %>
               <div class="mx-2 text-center">
                 <%= search_form_for @q do |f| %>
-                  <%= search_form_for @q do |f| %>
                     <%= f.label :user_name_or_description_cont %>
                     <%= f.search_field :user_name_or_description_cont %>
                     <%= f.submit %>
-                  <%end%>
                 <% end %>
             </div>
           <% end %>
