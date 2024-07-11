@@ -11,8 +11,11 @@ class User < ApplicationRecord
   has_many :order_details
   has_many :order_items
 
+  has_one_attached :image
+
   def self.ransackable_associations(_auth_object = nil)
-    %w[bookings cart likes order_details order_items service_offers tax_rate_by_location]
+    %w[bookings cart likes order_details order_items service_offers tax_rate_by_location image_blob
+       image_attachment]
   end
 
   def self.ransackable_attributes(_auth_object = nil)
