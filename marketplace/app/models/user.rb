@@ -32,4 +32,5 @@ class User < ApplicationRecord
   def display_name
     user_name
   end
+  accepts_nested_attributes_for :tax_rate_by_location
 end

@@ -14,8 +14,8 @@
   </div>
 
  <div class="field">
-  <%= f.label :tax_rate_by_location, "Province" %>
-  <%= f.collection_select :tax_rate_by_location, TaxRateByLocation.all, :id, :province, include_blank: true %>
+  <%= f.label :tax_rate_by_location_id, "Province" %>
+  <%= f.collection_select :tax_rate_by_location_id, TaxRateByLocation.order(:province).all, :id, :province, include_blank: true %>
   </div>
 
     <div class="field">
