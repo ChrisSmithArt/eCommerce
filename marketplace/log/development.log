@@ -41699,3 +41699,1492 @@ Processing by ServiceTypesController#show as HTML
 Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.7ms | Allocations: 14781)
 
 
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20240715171106)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime(6)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime(6)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240715171106') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:17:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.5ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.4ms | Allocations: 509)
+  Rendered application/_categories.html.erb (Duration: 88.5ms | Allocations: 11113)
+  Rendered application/_header.html.erb (Duration: 115.4ms | Allocations: 13710)
+  Rendered application/_footer.html.erb (Duration: 1.0ms | Allocations: 196)
+  Rendered pages/index.html.erb within layouts/application (Duration: 119.8ms | Allocations: 14419)
+  Rendered layout layouts/application.html.erb (Duration: 932.3ms | Allocations: 108614)
+Completed 200 OK in 987ms (Views: 949.4ms | ActiveRecord: 6.5ms | Allocations: 113446)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:23 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 555)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.4ms | Allocations: 3124)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 13260)
+Completed 200 OK in 140ms (Views: 46.4ms | ActiveRecord: 1.4ms | Allocations: 28114)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:32 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 471)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 10949)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.0ms | Allocations: 11471)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:36 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 408)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 10935)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 11411)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:46 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 396)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 10935)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 11411)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:50 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 11187)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.0ms | Allocations: 11657)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:51 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 11029)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.0ms | Allocations: 11500)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:51 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 10937)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.0ms | Allocations: 11407)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:17:52 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 10935)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 11405)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-07-15 12:17:53 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/page/index.html.arb
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/page/index.html.arb (Duration: 78.6ms | Allocations: 18351)
+Completed 200 OK in 140ms (Views: 83.3ms | ActiveRecord: 1.6ms | Allocations: 37017)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2024-07-15 12:17:55 -0500
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE TaxRateByLocation Load (0.0ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE TaxRateByLocation Load (0.0ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  [1m[36mServiceOffer Load (0.3ms)[0m  [1m[34mSELECT "service_offers".* FROM "service_offers"[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details"[0m
+  [1m[36mOrderItem Load (0.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items"[0m
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/index.html.arb (Duration: 433.0ms | Allocations: 113033)
+Completed 500 Internal Server Error in 454ms (ActiveRecord: 7.1ms | Allocations: 116161)
+
+
+  
+ActionView::Template::Error (undefined method `reset_password_token_cont' for an instance of Ransack::Search):
+    1: # frozen_string_literal: true
+    2: insert_tag renderer_for(:index)
+  
+ransack (4.1.1) lib/ransack/search.rb:114:in `method_missing'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:62:in `public_send'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:62:in `block in current_filter'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:62:in `each'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:62:in `detect'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:62:in `current_filter'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:52:in `select_html'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:42:in `block in to_html'
+actionview (7.1.3.4) lib/action_view/helpers/capture_helper.rb:50:in `block in capture'
+actionview (7.1.3.4) lib/action_view/buffers.rb:75:in `capture'
+actionview (7.1.3.4) lib/action_view/helpers/capture_helper.rb:50:in `capture'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base.rb:13:in `input_wrapping'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/base/search_method_select.rb:40:in `to_html'
+activeadmin (3.2.2) lib/active_admin/inputs/filters/string_input.rb:20:in `to_html'
+formtastic (5.0.0) lib/formtastic/helpers/input_helper.rb:240:in `input'
+activeadmin (3.2.2) lib/active_admin/filters/forms.rb:15:in `filter'
+activeadmin (3.2.2) lib/active_admin/filters/forms.rb:65:in `block (2 levels) in active_admin_filters_form_for'
+activeadmin (3.2.2) lib/active_admin/filters/forms.rb:58:in `each'
+activeadmin (3.2.2) lib/active_admin/filters/forms.rb:58:in `block in active_admin_filters_form_for'
+actionview (7.1.3.4) lib/action_view/helpers/capture_helper.rb:50:in `block in capture'
+actionview (7.1.3.4) lib/action_view/buffers.rb:75:in `capture'
+actionview (7.1.3.4) lib/action_view/helpers/capture_helper.rb:50:in `capture'
+actionview (7.1.3.4) lib/action_view/helpers/form_helper.rb:773:in `form_with'
+actionview (7.1.3.4) lib/action_view/helpers/form_helper.rb:461:in `form_for'
+activeadmin (3.2.2) lib/active_admin/filters/forms.rb:57:in `active_admin_filters_form_for'
+arbre (1.7.0) lib/arbre/element.rb:183:in `method_missing'
+activeadmin (3.2.2) lib/active_admin/filters/resource_extension.rb:169:in `block in filters_sidebar_section'
+activeadmin (3.2.2) lib/active_admin/views/components/sidebar_section.rb:26:in `instance_exec'
+activeadmin (3.2.2) lib/active_admin/views/components/sidebar_section.rb:26:in `build_sidebar_content'
+activeadmin (3.2.2) lib/active_admin/views/components/sidebar_section.rb:14:in `build'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.7.0) lib/arbre/context.rb:94:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:50:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:27:in `build_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:40:in `insert_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:15:in `sidebar_section'
+activeadmin (3.2.2) lib/active_admin/views/components/sidebar.rb:10:in `map'
+activeadmin (3.2.2) lib/active_admin/views/components/sidebar.rb:10:in `build'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.7.0) lib/arbre/context.rb:94:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:50:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:27:in `build_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:40:in `insert_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:15:in `sidebar'
+activeadmin (3.2.2) lib/active_admin/views/pages/base.rb:88:in `block in build_page_content'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:32:in `block in build_tag'
+arbre (1.7.0) lib/arbre/context.rb:94:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:50:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:27:in `build_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:40:in `insert_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:15:in `div'
+activeadmin (3.2.2) lib/active_admin/views/pages/base.rb:86:in `build_page_content'
+activeadmin (3.2.2) lib/active_admin/views/pages/base.rb:63:in `block (2 levels) in build_page'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:32:in `block in build_tag'
+arbre (1.7.0) lib/arbre/context.rb:94:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:50:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:27:in `build_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:40:in `insert_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:15:in `div'
+activeadmin (3.2.2) lib/active_admin/views/pages/base.rb:59:in `block in build_page'
+arbre (1.7.0) lib/arbre/context.rb:94:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:50:in `with_current_arbre_element'
+activeadmin (3.2.2) lib/active_admin/views/pages/base.rb:58:in `build_page'
+activeadmin (3.2.2) lib/active_admin/views/pages/base.rb:10:in `build'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.7.0) lib/arbre/context.rb:94:in `with_current_arbre_element'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:27:in `build_tag'
+arbre (1.7.0) lib/arbre/element/builder_methods.rb:40:in `insert_tag'
+activeadmin (3.2.2) app/views/active_admin/resource/index.html.arb:3
+arbre (1.7.0) lib/arbre/context.rb:47:in `instance_eval'
+arbre (1.7.0) lib/arbre/context.rb:47:in `initialize'
+activeadmin (3.2.2) app/views/active_admin/resource/index.html.arb:1:in `new'
+activeadmin (3.2.2) app/views/active_admin/resource/index.html.arb:1
+actionview (7.1.3.4) lib/action_view/base.rb:264:in `public_send'
+actionview (7.1.3.4) lib/action_view/base.rb:264:in `_run'
+actionview (7.1.3.4) lib/action_view/template.rb:261:in `block in render'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.1.3.4) lib/action_view/template.rb:549:in `instrument_render_template'
+actionview (7.1.3.4) lib/action_view/template.rb:249:in `render'
+actionview (7.1.3.4) lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.1.3.4) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+actionview (7.1.3.4) lib/action_view/renderer/template_renderer.rb:80:in `render_with_layout'
+actionview (7.1.3.4) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.1.3.4) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.1.3.4) lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+actionview (7.1.3.4) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+actionview (7.1.3.4) lib/action_view/rendering.rb:135:in `block in _render_template'
+actionview (7.1.3.4) lib/action_view/base.rb:291:in `in_rendering_context'
+actionview (7.1.3.4) lib/action_view/rendering.rb:134:in `_render_template'
+actionpack (7.1.3.4) lib/action_controller/metal/streaming.rb:256:in `_render_template'
+actionview (7.1.3.4) lib/action_view/rendering.rb:121:in `render_to_body'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.1.3.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.1.3.4) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:29:in `block (2 levels) in render'
+/home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/3.3.0/benchmark.rb:313:in `realtime'
+activesupport (7.1.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:29:in `block in render'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:98:in `cleanup_view_runtime'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:39:in `cleanup_view_runtime'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:28:in `render'
+responders (3.1.1) lib/action_controller/responder.rb:245:in `default_render'
+responders (3.1.1) lib/action_controller/responder.rb:175:in `to_html'
+responders (3.1.1) lib/responders/flash_responder.rb:105:in `to_html'
+responders (3.1.1) lib/action_controller/responder.rb:168:in `respond'
+responders (3.1.1) lib/action_controller/responder.rb:161:in `call'
+responders (3.1.1) lib/action_controller/respond_with.rb:216:in `respond_with'
+inherited_resources (1.14.0) lib/inherited_resources/actions.rb:7:in `index'
+activeadmin (3.2.2) lib/active_admin/resource_controller/streaming.rb:13:in `index'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.4) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.5.1) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+request_store (1.7.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/method_override.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/admin/users" for 127.0.0.1 at 2024-07-15 12:19:44 -0500
+  
+NameError (undefined local variable or method `config' for class User):
+  
+app/models/user.rb:36:in `<class:User>'
+app/models/user.rb:4:in `<main>'
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/admin/users" for 127.0.0.1 at 2024-07-15 12:20:26 -0500
+  
+NameError (undefined local variable or method `config' for class User):
+  
+app/models/user.rb:36:in `<class:User>'
+app/models/user.rb:4:in `<main>'
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/admin/users" for 127.0.0.1 at 2024-07-15 12:20:42 -0500
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE TaxRateByLocation Load (0.0ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE TaxRateByLocation Load (0.0ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/index.html.arb (Duration: 165.3ms | Allocations: 57973)
+Completed 200 OK in 261ms (Views: 170.4ms | ActiveRecord: 8.0ms | Allocations: 67441)
+
+
+Started GET "/admin/users/6/edit" for 127.0.0.1 at 2024-07-15 12:20:52 -0500
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.5ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/admin/users.rb:28:in `block (3 levels) in <main>'
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:28:in `block (3 levels) in <main>'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:29:in `block (3 levels) in <main>'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:29:in `block (3 levels) in <main>'
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/edit.html.arb (Duration: 284.5ms | Allocations: 64398)
+Completed 200 OK in 295ms (Views: 284.0ms | ActiveRecord: 3.8ms | Allocations: 67942)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at 2024-07-15 12:20:58 -0500
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/admin/users.rb:28:in `block (3 levels) in <main>'
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:28:in `block (3 levels) in <main>'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:29:in `block (3 levels) in <main>'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:29:in `block (3 levels) in <main>'
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/edit.html.arb (Duration: 105.9ms | Allocations: 33494)
+Completed 200 OK in 117ms (Views: 106.1ms | ActiveRecord: 1.4ms | Allocations: 36114)
+
+
+Started PATCH "/admin/users/1" for 127.0.0.1 at 2024-07-15 12:21:04 -0500
+Processing by Admin::UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Chris", "password"=>"[FILTERED]", "email"=>"chrissmithart@proton.me", "description"=>"DM, Artist, Programmer.", "address"=>"888 Mulvey Avenue", "tax_rate_by_location_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :button. Context: { controller: Admin::UsersController, action: update, request: #<ActionDispatch::Request:0x00007f5362331b90>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Chris", "password"=>"[FILTERED]", "email"=>"chrissmithart@proton.me", "description"=>"DM, Artist, Programmer.", "address"=>"888 Mulvey Avenue", "tax_rate_by_location_id"=>"1"}, "button"=>"", "controller"=>"admin/users", "action"=>"update", "id"=>"1"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "encrypted_password" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-07-15 17:21:04.596558"], ["encrypted_password", "[FILTERED]"], ["id", 1]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/users/1
+Completed 302 Found in 412ms (ActiveRecord: 11.6ms | Allocations: 19914)
+
+
+Started GET "/admin/users/1" for 127.0.0.1 at 2024-07-15 12:21:04 -0500
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/show.html.arb
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveAdmin::Comment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "User"], ["resource_id", 1], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "User"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/show.html.arb (Duration: 123.9ms | Allocations: 40975)
+Completed 200 OK in 137ms (Views: 125.2ms | ActiveRecord: 2.0ms | Allocations: 43819)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:21:13 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.4ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.3ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 16.7ms | Allocations: 4008)
+  Rendered application/_header.html.erb (Duration: 21.9ms | Allocations: 5222)
+  Rendered application/_footer.html.erb (Duration: 1.2ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 27.6ms | Allocations: 5788)
+  Rendered layout layouts/application.html.erb (Duration: 118.2ms | Allocations: 39205)
+Completed 200 OK in 125ms (Views: 121.2ms | ActiveRecord: 1.0ms | Allocations: 40388)
+
+
+Started GET "/users/" for 127.0.0.1 at 2024-07-15 12:21:14 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.1ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.7ms | Allocations: 919)
+  Rendered application/_header.html.erb (Duration: 12.9ms | Allocations: 3903)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."user_name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/_user.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/users/_user.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/_user.html.erb:11
+  Rendered collection of users/_user.html.erb [3 times] (Duration: 62.9ms | Allocations: 9425)
+  [1m[36mUser Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered application/_footer.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 104.1ms | Allocations: 16981)
+  Rendered layout layouts/application.html.erb (Duration: 137.5ms | Allocations: 27060)
+Completed 200 OK in 144ms (Views: 134.8ms | ActiveRecord: 4.6ms | Allocations: 27967)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NSwicHVyIjoiYmxvYl9pZCJ9fQ==--928e3e374ec21e370259f798460935b86d49c726/Bill.png" for 127.0.0.1 at 2024-07-15 12:21:15 -0500
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NiwicHVyIjoiYmxvYl9pZCJ9fQ==--f559c3c91ebef20b449c0e2f665b6dd1055e7fae/Andrew.png" for 127.0.0.1 at 2024-07-15 12:21:15 -0500
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--e1e91cc8b344fa7950df22f14a0c318fe9162ca3/Chris.png" for 127.0.0.1 at 2024-07-15 12:21:15 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NSwicHVyIjoiYmxvYl9pZCJ9fQ==--928e3e374ec21e370259f798460935b86d49c726", "filename"=>"Bill"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (1.8ms) [0m[34mGenerated URL for file at key: gf5bm3rgbs3hrwfx0rx6r94bvdxh (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZjVibTNyZ2JzM2hyd2Z4MHJ4NnI5NGJ2ZHhoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQmlsbC5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydCaWxsLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDctMTVUMTc6MjY6MTUuMjgxWiIsInB1ciI6ImJsb2Jfa2V5In19--2c6f300c1654ac9c09812db4ce8513e7a492a056/Bill.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZjVibTNyZ2JzM2hyd2Z4MHJ4NnI5NGJ2ZHhoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQmlsbC5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydCaWxsLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDctMTVUMTc6MjY6MTUuMjgxWiIsInB1ciI6ImJsb2Jfa2V5In19--2c6f300c1654ac9c09812db4ce8513e7a492a056/Bill.png
+Completed 302 Found in 25ms (ActiveRecord: 0.2ms | Allocations: 2541)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZjVibTNyZ2JzM2hyd2Z4MHJ4NnI5NGJ2ZHhoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQmlsbC5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydCaWxsLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDctMTVUMTc6MjY6MTUuMjgxWiIsInB1ciI6ImJsb2Jfa2V5In19--2c6f300c1654ac9c09812db4ce8513e7a492a056/Bill.png" for 127.0.0.1 at 2024-07-15 12:21:15 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NiwicHVyIjoiYmxvYl9pZCJ9fQ==--f559c3c91ebef20b449c0e2f665b6dd1055e7fae", "filename"=>"Andrew"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 0a5vc1633wzq7d4g4vuyx4kyqitk (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwYTV2YzE2MzN3enE3ZDRnNHZ1eXg0a3lxaXRrIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQW5kcmV3LnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ0FuZHJldy5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTA3LTE1VDE3OjI2OjE1LjQ1NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--5ca7dfa54daae9caed40e7d68aea3b88410026c9/Andrew.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwYTV2YzE2MzN3enE3ZDRnNHZ1eXg0a3lxaXRrIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQW5kcmV3LnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ0FuZHJldy5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTA3LTE1VDE3OjI2OjE1LjQ1NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--5ca7dfa54daae9caed40e7d68aea3b88410026c9/Andrew.png
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms | Allocations: 1403)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--e1e91cc8b344fa7950df22f14a0c318fe9162ca3", "filename"=>"Chris"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwYTV2YzE2MzN3enE3ZDRnNHZ1eXg0a3lxaXRrIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQW5kcmV3LnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ0FuZHJldy5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTA3LTE1VDE3OjI2OjE1LjQ1NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--5ca7dfa54daae9caed40e7d68aea3b88410026c9/Andrew.png" for 127.0.0.1 at 2024-07-15 12:21:15 -0500
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: fxcgh4d6529wicfo29xi9mx92r6j (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJmeGNnaDRkNjUyOXdpY2ZvMjl4aTlteDkycjZqIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQ2hyaXMucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnQ2hyaXMucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNy0xNVQxNzoyNjoxNS40NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--eb1ad87a1f93a990531fbfa2d6c81a854e16fda8/Chris.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJmeGNnaDRkNjUyOXdpY2ZvMjl4aTlteDkycjZqIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQ2hyaXMucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnQ2hyaXMucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNy0xNVQxNzoyNjoxNS40NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--eb1ad87a1f93a990531fbfa2d6c81a854e16fda8/Chris.png
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms | Allocations: 1697)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJmeGNnaDRkNjUyOXdpY2ZvMjl4aTlteDkycjZqIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiQ2hyaXMucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnQ2hyaXMucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wNy0xNVQxNzoyNjoxNS40NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--eb1ad87a1f93a990531fbfa2d6c81a854e16fda8/Chris.png" for 127.0.0.1 at 2024-07-15 12:21:15 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Bill"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Andrew"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 172)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Chris"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 154)
+
+
+Started GET "/users?page=2" for 127.0.0.1 at 2024-07-15 12:21:16 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.3ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.2ms | Allocations: 308)
+  Rendered application/_categories.html.erb (Duration: 5.1ms | Allocations: 916)
+  Rendered application/_header.html.erb (Duration: 10.3ms | Allocations: 2228)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."user_name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/_user.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/_user.html.erb:11
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 57.2ms | Allocations: 3966)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 83.9ms | Allocations: 8536)
+  Rendered layout layouts/application.html.erb (Duration: 115.5ms | Allocations: 18708)
+Completed 200 OK in 119ms (Views: 115.3ms | ActiveRecord: 1.7ms | Allocations: 19145)
+
+
+Started GET "/users?page=2" for 127.0.0.1 at 2024-07-15 12:21:17 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.8ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 5.6ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 14.1ms | Allocations: 2200)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."user_name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/_user.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/_user.html.erb:11
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 41.2ms | Allocations: 3964)
+  Rendered application/_footer.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 70.5ms | Allocations: 7820)
+  Rendered layout layouts/application.html.erb (Duration: 97.2ms | Allocations: 17885)
+Completed 200 OK in 101ms (Views: 96.2ms | ActiveRecord: 2.6ms | Allocations: 18316)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--fc2dd4d5937d9ff4c5a9a72667d04e9a3402640c/Jordan.png" for 127.0.0.1 at 2024-07-15 12:21:17 -0500
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--5129e848df6c9e29a4d21ebfd2590f580483bcae/Zach.png" for 127.0.0.1 at 2024-07-15 12:21:17 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--fc2dd4d5937d9ff4c5a9a72667d04e9a3402640c", "filename"=>"Jordan"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: 15oljii9uue8v1ka6jel8kyt6zfw (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxNW9samlpOXV1ZTh2MWthNmplbDhreXQ2emZ3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiSm9yZGFuLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ0pvcmRhbi5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTA3LTE1VDE3OjI2OjE3LjgzMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9e1b0025be2863a55c88f923303a3ed74260d9bc/Jordan.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxNW9samlpOXV1ZTh2MWthNmplbDhreXQ2emZ3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiSm9yZGFuLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ0pvcmRhbi5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTA3LTE1VDE3OjI2OjE3LjgzMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9e1b0025be2863a55c88f923303a3ed74260d9bc/Jordan.png
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms | Allocations: 1487)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-07-15 12:21:17 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxNW9samlpOXV1ZTh2MWthNmplbDhreXQ2emZ3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiSm9yZGFuLnBuZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ0pvcmRhbi5wbmciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTA3LTE1VDE3OjI2OjE3LjgzMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9e1b0025be2863a55c88f923303a3ed74260d9bc/Jordan.png" for 127.0.0.1 at 2024-07-15 12:21:17 -0500
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--5129e848df6c9e29a4d21ebfd2590f580483bcae", "filename"=>"Zach"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (1.4ms) [0m[34mGenerated URL for file at key: qy6qapn0vfe4xvtg4blqnh2tl9qm (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxeTZxYXBuMHZmZTR4dnRnNGJscW5oMnRsOXFtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiWmFjaC5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydaYWNoLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDctMTVUMTc6MjY6MTcuOTIxWiIsInB1ciI6ImJsb2Jfa2V5In19--da1b4e8c40175b39248d7032c24c21dc9921a1c2/Zach.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxeTZxYXBuMHZmZTR4dnRnNGJscW5oMnRsOXFtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiWmFjaC5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydaYWNoLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDctMTVUMTc6MjY6MTcuOTIxWiIsInB1ciI6ImJsb2Jfa2V5In19--da1b4e8c40175b39248d7032c24c21dc9921a1c2/Zach.png
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms | Allocations: 1361)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxeTZxYXBuMHZmZTR4dnRnNGJscW5oMnRsOXFtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiWmFjaC5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydaYWNoLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDctMTVUMTc6MjY6MTcuOTIxWiIsInB1ciI6ImJsb2Jfa2V5In19--da1b4e8c40175b39248d7032c24c21dc9921a1c2/Zach.png" for 127.0.0.1 at 2024-07-15 12:21:17 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.0ms | Allocations: 307)
+Processing by ActiveStorage::DiskController#show as PNG
+  Rendered application/_categories.html.erb (Duration: 7.8ms | Allocations: 1275)
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Jordan"}
+  Rendered application/_header.html.erb (Duration: 14.5ms | Allocations: 2599)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."user_name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+Completed 200 OK in 11ms (ActiveRecord: 0.0ms | Allocations: 1475)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/_user.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/users/_user.html.erb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/_user.html.erb:4
+  [1m[36mLike Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/_user.html.erb:11
+  Rendered collection of users/_user.html.erb [3 times] (Duration: 76.8ms | Allocations: 6596)
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered application/_footer.html.erb (Duration: 0.4ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 114.1ms | Allocations: 11432)
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Zach"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 250)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 198.3ms | Allocations: 22556)
+Completed 200 OK in 203ms (Views: 194.0ms | ActiveRecord: 6.0ms | Allocations: 23029)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:21:19 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 536)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1774)
+  Rendered layout layouts/application.html.erb (Duration: 47.7ms | Allocations: 11917)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.0ms | Allocations: 13291)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:21:27 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "chrissmithart@proton.me"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 347ms (ActiveRecord: 0.3ms | Allocations: 3342)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:21:27 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.0ms | Allocations: 308)
+  Rendered application/_categories.html.erb (Duration: 4.4ms | Allocations: 915)
+  Rendered application/_header.html.erb (Duration: 9.8ms | Allocations: 1947)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2145)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 12233)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.4ms | Allocations: 12537)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:22:26 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.7ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 13.9ms | Allocations: 4025)
+  Rendered application/_header.html.erb (Duration: 55.4ms | Allocations: 11540)
+  Rendered application/_footer.html.erb (Duration: 1.0ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 59.0ms | Allocations: 12110)
+  Rendered layout layouts/application.html.erb (Duration: 112.7ms | Allocations: 45145)
+Completed 200 OK in 118ms (Views: 109.9ms | ActiveRecord: 6.2ms | Allocations: 46400)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2024-07-15 12:22:31 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 219)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2129)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 12272)
+Completed 200 OK in 47ms (Views: 39.0ms | ActiveRecord: 0.2ms | Allocations: 14635)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:22:44 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.9ms | Allocations: 308)
+  Rendered application/_categories.html.erb (Duration: 4.3ms | Allocations: 916)
+  Rendered application/_header.html.erb (Duration: 8.4ms | Allocations: 1911)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2064)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 12131)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.3ms | Allocations: 12387)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-07-15 12:22:53 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/page/index.html.arb
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/page/index.html.arb (Duration: 71.2ms | Allocations: 16999)
+Completed 200 OK in 95ms (Views: 75.7ms | ActiveRecord: 0.9ms | Allocations: 23176)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2024-07-15 12:22:55 -0500
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/index.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE TaxRateByLocation Load (0.0ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE TaxRateByLocation Load (0.0ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/index.html.arb (Duration: 127.3ms | Allocations: 52434)
+Completed 200 OK in 142ms (Views: 130.7ms | ActiveRecord: 1.6ms | Allocations: 55000)
+
+
+Started GET "/admin/users/4/edit" for 127.0.0.1 at 2024-07-15 12:22:59 -0500
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTaxRateByLocation Load (0.4ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/admin/users.rb:28:in `block (3 levels) in <main>'
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:28:in `block (3 levels) in <main>'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "User"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:29:in `block (3 levels) in <main>'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/admin/users.rb:29:in `block (3 levels) in <main>'
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/edit.html.arb (Duration: 229.3ms | Allocations: 67803)
+Completed 200 OK in 267ms (Views: 228.2ms | ActiveRecord: 4.3ms | Allocations: 71310)
+
+
+Started PATCH "/admin/users/4" for 127.0.0.1 at 2024-07-15 12:23:05 -0500
+Processing by Admin::UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Jordan", "password"=>"[FILTERED]", "email"=>"jpfinn@gmail.com", "description"=>"Comic book writer, DM, Forgotten Realms is my favorite D&D setting.", "address"=>"Someplace", "tax_rate_by_location_id"=>"11"}, "button"=>"", "id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[31mUnpermitted parameter: :button. Context: { controller: Admin::UsersController, action: update, request: #<ActionDispatch::Request:0x00007f53794c4428>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Jordan", "password"=>"[FILTERED]", "email"=>"jpfinn@gmail.com", "description"=>"Comic book writer, DM, Forgotten Realms is my favorite D&D setting.", "address"=>"Someplace", "tax_rate_by_location_id"=>"11"}, "button"=>"", "controller"=>"admin/users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "encrypted_password" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-07-15 17:23:05.665941"], ["encrypted_password", "[FILTERED]"], ["id", 4]]
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/users/4
+Completed 302 Found in 389ms (ActiveRecord: 21.7ms | Allocations: 8718)
+
+
+Started GET "/admin/users/4" for 127.0.0.1 at 2024-07-15 12:23:05 -0500
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/show.html.arb
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" WHERE "tax_rate_by_locations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mActiveAdmin::Comment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "User"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "User"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/activeadmin-3.2.2/app/views/active_admin/resource/show.html.arb (Duration: 121.4ms | Allocations: 30895)
+Completed 200 OK in 140ms (Views: 126.0ms | ActiveRecord: 1.0ms | Allocations: 33737)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:23:10 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.1ms | Allocations: 308)
+  Rendered application/_categories.html.erb (Duration: 3.8ms | Allocations: 916)
+  Rendered application/_header.html.erb (Duration: 11.0ms | Allocations: 1912)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2065)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 12241)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.4ms | Allocations: 12498)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-07-15 12:23:12 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1057)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:24:51 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.3ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.3ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 5.0ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 13.0ms | Allocations: 1879)
+  Rendered application/_footer.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2032)
+  Rendered layout layouts/application.html.erb (Duration: 89.1ms | Allocations: 12434)
+Completed 200 OK in 93ms (Views: 90.8ms | ActiveRecord: 0.5ms | Allocations: 12689)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2024-07-15 12:24:53 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1168)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 11234)
+Completed 200 OK in 46ms (Views: 39.2ms | ActiveRecord: 0.2ms | Allocations: 12877)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2024-07-15 12:24:58 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1167)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 11233)
+Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 0.2ms | Allocations: 12862)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2024-07-15 12:25:00 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1167)
+  Rendered layout layouts/application.html.erb (Duration: 62.0ms | Allocations: 11242)
+Completed 200 OK in 80ms (Views: 71.1ms | ActiveRecord: 0.2ms | Allocations: 12874)
+
+
+Started GET "/rails/info/routes" for ::1 at 2024-07-15 12:26:59 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.4/lib/rails/templates/layouts/application.html.erb
+  Rendering /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/actionpack-7.1.3.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [145 times] (Duration: 40.9ms | Allocations: 24345)
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/actionpack-7.1.3.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.4ms | Allocations: 693)
+  Rendered /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 66.5ms | Allocations: 37642)
+  Rendered layout /home/chris/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.4/lib/rails/templates/layouts/application.html.erb (Duration: 68.4ms | Allocations: 37922)
+Completed 200 OK in 98ms (Views: 75.5ms | ActiveRecord: 0.0ms | Allocations: 38973)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-07-15 12:31:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 2.5ms | Allocations: 1181)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:32:13 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.8ms | Allocations: 308)
+  Rendered application/_categories.html.erb (Duration: 3.5ms | Allocations: 943)
+  Rendered application/_header.html.erb (Duration: 7.9ms | Allocations: 1961)
+  Rendered application/_footer.html.erb (Duration: 0.3ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2114)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 12290)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.5ms | Allocations: 12546)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-07-15 12:32:35 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `show'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.1ms | Allocations: 877)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:18:in `show'
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:34:20 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.0ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 12.6ms | Allocations: 4003)
+  Rendered application/_header.html.erb (Duration: 36.9ms | Allocations: 11521)
+  Rendered application/_footer.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 39.7ms | Allocations: 12091)
+  Rendered layout layouts/application.html.erb (Duration: 85.2ms | Allocations: 45290)
+Completed 200 OK in 91ms (Views: 83.5ms | ActiveRecord: 5.4ms | Allocations: 46545)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2024-07-15 12:34:22 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdminUser Update (11.1ms)[0m  [1m[33mUPDATE "admin_users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2024-07-15 17:34:22.289464"], ["id", 1]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 94ms (ActiveRecord: 19.7ms | Allocations: 11281)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:34:22 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (2.0ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.9ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 34.0ms | Allocations: 916)
+  Rendered application/_header.html.erb (Duration: 43.1ms | Allocations: 1329)
+  Rendered application/_footer.html.erb (Duration: 0.4ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 46.1ms | Allocations: 1527)
+  Rendered layout layouts/application.html.erb (Duration: 73.2ms | Allocations: 11937)
+Completed 200 OK in 77ms (Views: 72.3ms | ActiveRecord: 1.9ms | Allocations: 12240)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:34:31 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 536)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1779)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 12006)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.0ms | Allocations: 13214)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:34:32 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "chrissmithart@proton.me"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 260ms (ActiveRecord: 0.5ms | Allocations: 2952)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:34:32 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.8ms | Allocations: 308)
+  Rendered application/_categories.html.erb (Duration: 5.0ms | Allocations: 915)
+  Rendered application/_header.html.erb (Duration: 8.8ms | Allocations: 1856)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2009)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 12084)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.3ms | Allocations: 12343)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2024-07-15 12:34:34 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 9ms (ActiveRecord: 0.2ms | Allocations: 1772)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:34:34 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.7ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 2.7ms | Allocations: 915)
+  Rendered application/_header.html.erb (Duration: 4.0ms | Allocations: 1303)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1456)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 11553)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.1ms | Allocations: 11811)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:34:35 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 891)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 11060)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.0ms | Allocations: 11634)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 12:34:44 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "chrissmithart@proton.me"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 283ms (ActiveRecord: 0.1ms | Allocations: 2423)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:34:44 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.2ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 4.3ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 8.7ms | Allocations: 1892)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2045)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 12203)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.3ms | Allocations: 12461)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2024-07-15 12:34:53 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 9ms (ActiveRecord: 0.2ms | Allocations: 1780)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 12:34:54 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.1ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 0.8ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 3.1ms | Allocations: 915)
+  Rendered application/_header.html.erb (Duration: 4.5ms | Allocations: 1291)
+  Rendered application/_footer.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1444)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 11519)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.1ms | Allocations: 11777)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:34:54 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 208)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 83)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 11659)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 12603)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:35:17 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "the-outlander37@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 496)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1401)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 11596)
+Completed 422 Unprocessable Content in 315ms (Views: 28.7ms | ActiveRecord: 2.8ms | Allocations: 18048)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:37:34 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 492)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 2572)
+  Rendered layout layouts/application.html.erb (Duration: 64.1ms | Allocations: 35787)
+Completed 200 OK in 81ms (Views: 68.0ms | ActiveRecord: 3.0ms | Allocations: 42878)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:39:13 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 210)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2753)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2845)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.2ms | Allocations: 9935)
+
+
+  
+ActionView::Template::Error (undefined method `tax_rate_by_location_id_eq' for an instance of User):
+    14:   </div>
+    15: 
+    16:   <%= f.label :tax_rate_by_location_id_eq, "Province" %>
+    17:   <%= f.collection_select :tax_rate_by_location_id_eq, TaxRateByLocation.all, :id, :province, include_blank: true %>
+    18: 
+    19:     <div class="field">
+    20:     <%= f.label :description %><br />
+  
+app/views/devise/registrations/new.html.erb:17
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:39:40 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 210)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 7302)
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 40712)
+Completed 200 OK in 89ms (Views: 66.9ms | ActiveRecord: 3.0ms | Allocations: 47827)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:40:39 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Unknown", "address"=>"987 Unknown Avenue", "tax_rate_by_location_id"=>"12", "description"=>"An unknown entity", "email"=>"unknown@mystery.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :user_name, :address, :tax_rate_by_location_id, :description. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5379236558>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Unknown", "address"=>"987 Unknown Avenue", "tax_rate_by_location_id"=>"12", "description"=>"An unknown entity", "email"=>"unknown@mystery.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "unknown@mystery.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 389)
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2747)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 12809)
+Completed 422 Unprocessable Content in 290ms (Views: 26.3ms | ActiveRecord: 2.7ms | Allocations: 19487)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:41:06 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 210)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 18.7ms | Allocations: 7939)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 40954)
+Completed 200 OK in 69ms (Views: 57.2ms | ActiveRecord: 2.8ms | Allocations: 48051)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:41:34 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Chris2", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"Another Chris", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :user_name, :address, :tax_rate_by_location, :description. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f53628a9ed8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Chris2", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"Another Chris", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "the-outlander37@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 389)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 3218)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 13280)
+Completed 422 Unprocessable Content in 294ms (Views: 31.4ms | ActiveRecord: 2.6ms | Allocations: 19401)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:44:37 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Chris2", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"Another Chris", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :user_name, :address, :tax_rate_by_location, :description. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5379e10838>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Chris2", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"Another Chris", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "the-outlander37@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 590)
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 7378)
+  Rendered layout layouts/application.html.erb (Duration: 61.0ms | Allocations: 40389)
+Completed 422 Unprocessable Content in 355ms (Views: 63.4ms | ActiveRecord: 6.6ms | Allocations: 53809)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:47:01 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 210)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 7236)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7328)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.1ms | Allocations: 14419)
+
+
+  
+ActionView::Template::Error (undefined method `tax_rate_by_location' for an instance of TaxRateByLocation):
+    14:   </div>
+    15: 
+    16:   <%= f.label :tax_rate_by_location, "Province" %>
+    17:   <%= f.collection_select :tax_rate_by_location, TaxRateByLocation.all, :tax_rate_by_location, :province, include_blank: true %>
+    18: 
+    19:     <div class="field">
+    20:     <%= f.label :description %><br />
+  
+app/views/devise/registrations/new.html.erb:17
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:47:12 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 210)
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 7939)
+  Rendered layout layouts/application.html.erb (Duration: 67.2ms | Allocations: 41349)
+Completed 200 OK in 82ms (Views: 69.7ms | ActiveRecord: 3.0ms | Allocations: 48456)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:47:27 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2649)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2741)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.1ms | Allocations: 9815)
+
+
+  
+ActionView::Template::Error (undefined method `tax_rate_by_location_id_eq' for an instance of User):
+    14:   </div>
+    15: 
+    16:   <%= f.label :tax_rate_by_location_id_eq, "Province" %>
+    17:   <%= f.collection_select :tax_rate_by_location_id_eq, TaxRateByLocation.all, :id, :province, include_blank: true %>
+    18: 
+    19:     <div class="field">
+    20:     <%= f.label :description %><br />
+  
+app/views/devise/registrations/new.html.erb:17
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:48:20 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 210)
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.6ms | Allocations: 7942)
+  Rendered layout layouts/application.html.erb (Duration: 110.2ms | Allocations: 40957)
+Completed 200 OK in 126ms (Views: 111.9ms | ActiveRecord: 4.1ms | Allocations: 48039)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:48:48 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"", "description"=>"Old Smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :user_name, :address, :tax_rate_by_location, :description. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f536228a660>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"", "description"=>"Old Smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (8.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "the-outlander37@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 389)
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 20.1ms | Allocations: 3218)
+  Rendered layout layouts/application.html.erb (Duration: 78.9ms | Allocations: 13289)
+Completed 422 Unprocessable Content in 375ms (Views: 79.9ms | ActiveRecord: 9.0ms | Allocations: 19424)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:49:09 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"Old Smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :user_name, :address, :tax_rate_by_location, :description. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f536288c8b0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"Old Smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "the-outlander37@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 381)
+  [1m[36mTaxRateByLocation Load (0.2ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3203)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 13275)
+Completed 422 Unprocessable Content in 309ms (Views: 30.0ms | ActiveRecord: 2.4ms | Allocations: 18559)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:50:06 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"old smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :user_name, :address, :tax_rate_by_location, :description. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f5379e71228>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"18 Atkinson Road", "tax_rate_by_location"=>"1", "description"=>"old smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "the-outlander37@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 590)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 7381)
+  Rendered layout layouts/application.html.erb (Duration: 75.5ms | Allocations: 40392)
+Completed 422 Unprocessable Content in 356ms (Views: 78.7ms | ActiveRecord: 5.4ms | Allocations: 53797)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:50:51 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2551)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2643)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.2ms | Allocations: 9748)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    15: 
+    16:  <div class="field">
+    17:   <%= f.label :tax_rate_by_location_id, "Province" %>
+    18:   <%= f.collection_select :tax_rate_by_location_id, TaxRateByLocation.all, include_blank: true %>
+    19:   </div>
+    20: 
+    21:     <div class="field">
+  
+app/views/devise/registrations/new.html.erb:18
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:51:09 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 6600)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 6692)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 4.1ms | Allocations: 13796)
+
+
+  
+ActionView::Template::Error (#<ActionView::Base:0x000000000c4928> is not a symbol nor a string):
+    15: 
+    16:  <div class="field">
+    17:   <%= f.label :tax_rate_by_location_id, "Province" %>
+    18:   <%= f.collection_select :tax_rate_by_location_id, TaxRateByLocation.all, self, :province, include_blank: true %>
+    19:   </div>
+    20: 
+    21:     <div class="field">
+  
+app/views/devise/registrations/new.html.erb:18
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 12:51:35 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 210)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 489)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 7940)
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | Allocations: 41350)
+Completed 200 OK in 70ms (Views: 58.2ms | ActiveRecord: 3.2ms | Allocations: 48465)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-07-15 12:52:27 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"686 Garwood Ave", "tax_rate_by_location"=>"1", "description"=>"Old Smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :user_name, :address, :tax_rate_by_location, :description. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f537920caa0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"user_name"=>"Smitty", "address"=>"686 Garwood Ave", "tax_rate_by_location"=>"1", "description"=>"Old Smith", "email"=>"the-outlander37@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "the-outlander37@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 389)
+  [1m[36mTaxRateByLocation Load (0.1ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations"[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 68)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3218)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 13281)
+Completed 422 Unprocessable Content in 292ms (Views: 28.3ms | ActiveRecord: 2.8ms | Allocations: 19403)
+
+
