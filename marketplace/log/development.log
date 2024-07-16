@@ -45088,3 +45088,141 @@ Processing by PagesController#index as TURBO_STREAM
 Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.2ms | Allocations: 11906)
 
 
+Started GET "/" for 127.0.0.1 at 2024-07-15 18:56:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.8ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 4.6ms | Allocations: 509)
+  Rendered application/_categories.html.erb (Duration: 124.7ms | Allocations: 11119)
+  Rendered application/_header.html.erb (Duration: 156.5ms | Allocations: 13745)
+  Rendered application/_footer.html.erb (Duration: 1.4ms | Allocations: 196)
+  Rendered pages/index.html.erb within layouts/application (Duration: 162.1ms | Allocations: 14454)
+  Rendered layout layouts/application.html.erb (Duration: 1020.2ms | Allocations: 103101)
+Completed 200 OK in 1092ms (Views: 1038.8ms | ActiveRecord: 11.9ms | Allocations: 107933)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-07-15 18:58:18 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.3ms | Allocations: 590)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-07-15 18:58:19 -0500
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 36.5ms | Allocations: 3440)
+  Rendered layout layouts/application.html.erb (Duration: 131.5ms | Allocations: 14382)
+Completed 200 OK in 239ms (Views: 136.6ms | ActiveRecord: 1.9ms | Allocations: 29566)
+
+
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 217)
+  [1m[36mTaxRateByLocation Load (0.3ms)[0m  [1m[34mSELECT "tax_rate_by_locations".* FROM "tax_rate_by_locations" ORDER BY "tax_rate_by_locations"."province" ASC[0m
+  ↳ app/views/devise/registrations/new.html.erb:18
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 83)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 71.7ms | Allocations: 11443)
+  Rendered layout layouts/application.html.erb (Duration: 139.8ms | Allocations: 21624)
+Completed 200 OK in 146ms (Views: 141.4ms | ActiveRecord: 1.3ms | Allocations: 22937)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-07-15 18:58:19 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 891)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 11027)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.0ms | Allocations: 11679)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-07-15 18:58:25 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 117)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 10942)
+Completed 200 OK in 66ms (Views: 49.8ms | ActiveRecord: 0.0ms | Allocations: 11850)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 18:58:26 -0500
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "chrissmithart@proton.me"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 374ms (ActiveRecord: 0.8ms | Allocations: 6032)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 18:58:26 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.3ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.7ms | Allocations: 308)
+  Rendered application/_categories.html.erb (Duration: 8.4ms | Allocations: 916)
+  Rendered application/_header.html.erb (Duration: 17.4ms | Allocations: 1997)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 2195)
+  Rendered layout layouts/application.html.erb (Duration: 64.6ms | Allocations: 12277)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.7ms | Allocations: 12581)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 18:58:50 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.4ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 3.7ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 10.4ms | Allocations: 915)
+  Rendered application/_header.html.erb (Duration: 26.3ms | Allocations: 1176)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 28.7ms | Allocations: 1329)
+  Rendered layout layouts/application.html.erb (Duration: 96.2ms | Allocations: 11400)
+Completed 200 OK in 100ms (Views: 98.0ms | ActiveRecord: 0.3ms | Allocations: 11655)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-07-15 18:58:55 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 111)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 10954)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.0ms | Allocations: 11604)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-07-15 18:58:57 -0500
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Chrissmithart@proton.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "chrissmithart@proton.me"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 342ms (ActiveRecord: 0.1ms | Allocations: 2444)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 18:58:57 -0500
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/application/_header.html.erb:37
+  [1m[36mServiceType Load (0.2ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 1.1ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 28.6ms | Allocations: 914)
+  Rendered application/_header.html.erb (Duration: 33.0ms | Allocations: 1858)
+  Rendered application/_footer.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 2011)
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 12466)
+Completed 200 OK in 63ms (Views: 61.4ms | ActiveRecord: 0.3ms | Allocations: 12724)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
