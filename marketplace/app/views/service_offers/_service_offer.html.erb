@@ -11,7 +11,18 @@
             </div>
         </div>
         <div>
-            Add to Cart <input type="number" id="quantity" name="quantity" min="0" max=<%=service_offer.slot_availabilty%> />
+            <%= form_with model: [ service_offer, service_offer.cart_items.build ] do |form| %>
+            <div>
+                <%= form.label :quantity%><br>
+                <%= form.hidden_field :id, value: service_offer.id %>
+                <%= form.hidden_field :cart_id, value: current_user.cart.id %>
+                <%= form.hidden_field :service_offer_id, value: service_offer.id %>
+                <%= form.number_field :quantity, in: 0..service_offer.slot_availabilty, step: 1  %>
+            </div>
+            <div>
+                <%= form.submit  %>
+            </div>
+            <% end %>
         </div>
     </div>
 <% else %>

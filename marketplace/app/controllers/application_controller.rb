@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :check_cart
+  # before_action :check_cart
   helper_method :breadcrumbs
 
   def breadcrumbs
