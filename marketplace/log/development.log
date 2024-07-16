@@ -45226,3 +45226,233 @@ Completed 200 OK in 63ms (Views: 61.4ms | ActiveRecord: 0.3ms | Allocations: 127
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:28:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 5.8ms | Allocations: 28321)
+
+
+  
+NoMethodError (undefined method `exist?' for nil):
+  
+app/controllers/application_controller.rb:16:in `check_cart'
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:29:53 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 5.9ms | Allocations: 10397)
+
+
+  
+NoMethodError (undefined method `exist?' for nil):
+  
+app/controllers/application_controller.rb:17:in `check_cart'
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:30:18 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 5.5ms | Allocations: 10397)
+
+
+  
+NoMethodError (undefined method `exists?' for nil):
+  
+app/controllers/application_controller.rb:17:in `check_cart'
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:30:43 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.4ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 3.1ms | Allocations: 491)
+  Rendered application/_categories.html.erb (Duration: 44.5ms | Allocations: 6704)
+  Rendered application/_header.html.erb (Duration: 49.6ms | Allocations: 7837)
+  Rendered application/_footer.html.erb (Duration: 1.5ms | Allocations: 196)
+  Rendered pages/index.html.erb within layouts/application (Duration: 54.9ms | Allocations: 8423)
+  Rendered layout layouts/application.html.erb (Duration: 577.0ms | Allocations: 97045)
+Completed 200 OK in 623ms (Views: 579.9ms | ActiveRecord: 5.8ms | Allocations: 108406)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:30:58 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.5ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.7ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 17.7ms | Allocations: 4005)
+  Rendered application/_header.html.erb (Duration: 23.1ms | Allocations: 5017)
+  Rendered application/_footer.html.erb (Duration: 0.9ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 26.8ms | Allocations: 5589)
+  Rendered layout layouts/application.html.erb (Duration: 90.3ms | Allocations: 39060)
+Completed 200 OK in 134ms (Views: 92.2ms | ActiveRecord: 5.8ms | Allocations: 50213)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:31:29 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:19:in `check_cart'
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `check_cart'
+  [1m[36mCart Create (0.6ms)[0m  [1m[32mINSERT INTO "carts" ("total", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["total", 0], ["user_id", 1], ["created_at", "2024-07-16 00:31:30.550980"], ["updated_at", "2024-07-16 00:31:30.550980"]]
+  ↳ app/controllers/application_controller.rb:19:in `check_cart'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:19:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (1.4ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 3.2ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 25.6ms | Allocations: 4003)
+  Rendered application/_header.html.erb (Duration: 32.3ms | Allocations: 5013)
+  Rendered application/_footer.html.erb (Duration: 1.6ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 38.2ms | Allocations: 5585)
+  Rendered layout layouts/application.html.erb (Duration: 149.8ms | Allocations: 39057)
+Completed 200 OK in 289ms (Views: 154.4ms | ActiveRecord: 16.2ms | Allocations: 59082)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:31:32 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.3ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.6ms | Allocations: 307)
+  Rendered application/_categories.html.erb (Duration: 7.7ms | Allocations: 915)
+  Rendered application/_header.html.erb (Duration: 9.8ms | Allocations: 1075)
+  Rendered application/_footer.html.erb (Duration: 0.6ms | Allocations: 24)
+  Rendered pages/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 1228)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 11297)
+Completed 200 OK in 77ms (Views: 65.6ms | ActiveRecord: 0.7ms | Allocations: 12873)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:32:00 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.3ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.4ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 15.0ms | Allocations: 4003)
+  Rendered application/_header.html.erb (Duration: 18.6ms | Allocations: 5025)
+  Rendered application/_footer.html.erb (Duration: 1.0ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 22.5ms | Allocations: 5597)
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 38628)
+Completed 200 OK in 127ms (Views: 82.9ms | ActiveRecord: 6.4ms | Allocations: 52224)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:33:31 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.5ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.6ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 18.4ms | Allocations: 4003)
+  Rendered application/_header.html.erb (Duration: 22.4ms | Allocations: 5056)
+  Rendered application/_footer.html.erb (Duration: 1.3ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 5628)
+  Rendered layout layouts/application.html.erb (Duration: 95.0ms | Allocations: 39099)
+Completed 200 OK in 153ms (Views: 98.6ms | ActiveRecord: 5.5ms | Allocations: 52703)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:34:09 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.4ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 4.9ms | Allocations: 435)
+  Rendered application/_categories.html.erb (Duration: 23.1ms | Allocations: 4003)
+  Rendered application/_header.html.erb (Duration: 29.4ms | Allocations: 5054)
+  Rendered application/_footer.html.erb (Duration: 1.3ms | Allocations: 188)
+  Rendered pages/index.html.erb within layouts/application (Duration: 34.5ms | Allocations: 5626)
+  Rendered layout layouts/application.html.erb (Duration: 118.9ms | Allocations: 38657)
+Completed 200 OK in 176ms (Views: 122.8ms | ActiveRecord: 7.8ms | Allocations: 52258)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:34:25 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (Duration: 10.0ms | Allocations: 2074)
+  Rendered pages/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2332)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 2424)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 5.7ms | Allocations: 16012)
+
+
+  
+ActionView::Template::Error (undefined method `cart_items' for an instance of Cart):
+    48:             <details>
+    49:             <summary><%=current_user.user_name%>'s Cart</summary>
+    50:             <ul>
+    51:               <li><%=current_user.cart.cart_items.first%></li>
+    52:               <li><%=current_user.cart.total%></li>
+    53:             </ul>
+    54:             </details>
+  
+app/views/application/_header.html.erb:51
+app/views/pages/index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2024-07-15 19:34:45 -0500
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `check_cart'
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `check_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mServiceType Load (0.3ms)[0m  [1m[34mSELECT "service_types".* FROM "service_types"[0m
+  ↳ app/views/application/_categories.html.erb:2
+  Rendered collection of service_types/_service_type.html.erb [8 times] (Duration: 2.0ms | Allocations: 437)
+  Rendered application/_categories.html.erb (Duration: 17.9ms | Allocations: 4008)
+  Rendered application/_header.html.erb (Duration: 21.2ms | Allocations: 5060)
+  Rendered application/_footer.html.erb (Duration: 0.9ms | Allocations: 195)
+  Rendered pages/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 5638)
+  Rendered layout layouts/application.html.erb (Duration: 236.7ms | Allocations: 39117)
+Completed 200 OK in 286ms (Views: 239.1ms | ActiveRecord: 5.6ms | Allocations: 52709)
+
+
