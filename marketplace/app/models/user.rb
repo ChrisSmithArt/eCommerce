@@ -25,7 +25,7 @@ class User < ApplicationRecord
     attachable.variant :thumb, resize_to_limit: [100, 100]
   end
 
-  # validates :user_name, presence: true
+  validates :user_name, presence: true
   # validates :user_name, uniqueness: true
   # validates :user_name, exclusion: { in: %w[admin superuser] }
 
