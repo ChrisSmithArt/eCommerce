@@ -6,7 +6,7 @@
         <div>
             <div>
                 <span><%= link_to service_offer.service_offer_name, service_offer%></span> 
-                <span>at $<%= service_offer.service_offer_price.to_f/100%> with</span>
+                <span>at $<%= Money.from_cents(service_offer.service_offer_price, "CAD")%> with</span>
                 <span><%= service_offer.slot_availabilty%> Slots</span>
             </div>
         </div>
@@ -35,6 +35,9 @@
         </div>
         <div>
             <%= service_offer.service_type.service_type_name%>
+        </div>
+        <div>
+            $<%= Money.from_cents(service_offer.service_offer_price, "CAD")%>
         </div>
     </div>
 <% end %>
