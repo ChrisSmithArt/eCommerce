@@ -33,6 +33,8 @@ gem 'kaminari'
 
 gem 'ransack'
 
+gem 'money'
+
 gem 'sassc-rails'
 
 gem 'tailwindcss-rails'

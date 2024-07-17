@@ -3,6 +3,7 @@
 # model for Tax Rates.
 class TaxRateByLocation < ApplicationRecord
   has_many :users
+  # validates_associated :users
 
   def self.ransackable_associations(_auth_object = nil)
     ["users"]
