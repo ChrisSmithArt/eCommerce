@@ -9,6 +9,7 @@ ActiveAdmin.register User do
   permit_params :user_name, :password, :email, :description, :address, :tax_rate_by_location_id, :image
 
   remove_filter :image_attachment, :image_blob
+  config.filters = false
   #
   # or
   #
