@@ -7,7 +7,7 @@ class CartItemsController < ApplicationController
     @service_offer = ServiceOffer.find(params[:cart_item][:id])
     @cart = current_user.cart
     @cart_item = CartItem.create!(cart_item_params)
-    @cart_item.cart.total += @cart_item.service_offer.service_offer_price
+    @cart_item.cart.total += @cart_item.service_offer.service_offer_price * @cart_item.quantity
     @cart_item.cart.save
     redirect_back_or_to root_path
   end

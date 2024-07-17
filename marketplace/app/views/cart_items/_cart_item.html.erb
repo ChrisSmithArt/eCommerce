@@ -1,6 +1,6 @@
-<li class="flex space-x-2  mx-2">
+<div class="flex space-x-2  mx-2">
     <span><%=cart_item.quantity%></span> 
-    <%if cart_item.quantity <= cart_item.service_offer.slot_availabilty%>
+    <%if cart_item.quantity < cart_item.service_offer.slot_availabilty%>
         <%=button_to "+", add_path(cart_item), method: :put %>
     <%end%>
     <%if cart_item.quantity > 1 %>
@@ -10,4 +10,4 @@
     <%end%>
     <span><%=cart_item.service_offer.service_offer_name%></span>
     <%=button_to "Remove", delete_path(cart_item), method: :put  %>  
-</li>
+</div>

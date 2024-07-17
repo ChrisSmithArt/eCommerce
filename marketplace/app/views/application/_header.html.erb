@@ -1,7 +1,7 @@
 <header class="flex justify-evenly">
     <h1>AirDnD</h1> 
-    <div>
-        <div class="flex">
+    <div class="text-center">
+        <div class="flex justify-center">
             <div class="mx-2">
                 <%= link_to "Providers", "/users/", class: "text-center no-underline"%>
             </div>
@@ -12,7 +12,7 @@
         <% if local_assigns[:offer] %>
             <div class="mx-2 text-center">
                   <%= search_form_for @q do |f| %>
-                      <%= f.label :service_offer_name_or_service_offer_notes_cont %>
+                      <%= f.label :service_offer_name_or_service_offer_notes_cont %> <br>
                       <%= f.search_field :service_offer_name_or_service_offer_notes_cont %>
                           
                       <%= f.label :service_type_id_eq, "Service Type" %>
@@ -24,7 +24,7 @@
         <% elsif local_assigns[:provider]  %>
               <div class="mx-2 text-center">
                 <%= search_form_for @q do |f| %>
-                    <%= f.label :user_name_or_description_cont %>
+                    <%= f.label :user_name_or_description_cont %> <br>
                     <%= f.search_field :user_name_or_description_cont %>
                     <%= f.submit %>
                 <% end %>
@@ -47,16 +47,16 @@
           <% if user_signed_in? %>
             <details>
             <summary><%=current_user.user_name%>'s Cart</summary>
-            <ul class="z-50 fixed bg-gray-200 list-outside list-none">
+            <div class="z-50 fixed bg-gray-200 list-outside list-none">
               <% if current_user.cart%>
                 <% if current_user.cart.cart_items.exists?%>
                   <%= render current_user.cart.cart_items%>
-                  <li>Total before taxes: $<%=Money.from_cents(current_user.cart.total, "CAD")%></li>
+                  <div>Total before taxes: $<%=Money.from_cents(current_user.cart.total, "CAD")%></div>
                 <%else%>
-                  <li>Empty Cart!</li>
+                  <div>Empty Cart!</div>
                 <%end%>
               <%end%>
-            </ul>
+            </div>
             </details>
           <% end%>
         </div>
