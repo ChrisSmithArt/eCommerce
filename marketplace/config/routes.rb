@@ -34,6 +34,9 @@ Rails.application.routes.draw do
     resources :service_offers
   end
 
+  put 'cart_items/:id/add', to: 'cart_items#add', as: 'add'
+  put 'cart_items/:id/remove', to: 'cart_items#remove', as: 'remove'
+  put 'cart_items/:id/delete', to: 'cart_items#delete', as: 'delete'
 
   resources :service_types
 

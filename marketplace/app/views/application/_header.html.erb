@@ -31,12 +31,11 @@
             </div>
           <% end %>
     </div>
-    <div class="flex">
+    <div class="text-center">
         <div class="mx-2">
-            <ul>
+            <ul class="flex">
               <% if user_signed_in? %>
-                <li><%= link_to "Hi, #{current_user.email}", edit_user_registration_path %></li>
-                <li><%=current_user.id%></li>
+                <li><%= link_to "Hi, #{current_user.user_name}", edit_user_registration_path %></li>
                 <li><%= link_to 'Sign Out', destroy_user_session_path, data: { "turbo-method": :delete } %></li>
               <% else %>
                 <li><%= link_to 'Sign In', new_user_session_path %></li>
@@ -48,14 +47,15 @@
           <% if user_signed_in? %>
             <details>
             <summary><%=current_user.user_name%>'s Cart</summary>
-            <ul>
-              <li>cart item</li>
-              <li><%=current_user.cart.total%></li>
+            <ul class="z-50 fixed bg-gray-200 list-outside list-none">
+              <% if current_user.cart.cart_items.exists?%>
+              <%= render current_user.cart.cart_items%>
+              <%else%>
+              <li>Empty Cart!</li>
+              <%end%>
             </ul>
             </details>
           <% end%>
-
-            
         </div>
     </div> 
 </header>
