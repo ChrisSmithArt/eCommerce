@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'order_details/create'
+  get 'order_details/show'
+  get 'order_details/index'
+  get 'bookings/create'
+  get 'bookings/show'
+  get 'bookings/index'
+  get 'order_items/create'
+  get 'orders/create'
+  get 'orders/show'
+  get 'orders/index'
   get 'cart_items/new'
   get 'carts/index'
   get 'carts/show'
@@ -15,6 +25,8 @@ Rails.application.routes.draw do
   get 'pages/about'
 
   root 'pages#index'
+
+  resources :carts
 
   resources :users do
     resources :service_offers

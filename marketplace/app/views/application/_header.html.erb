@@ -52,6 +52,7 @@
                 <% if current_user.cart.cart_items.exists?%>
                   <%= render current_user.cart.cart_items%>
                   <div>Total before taxes: $<%=Money.from_cents(current_user.cart.total, "CAD")%></div>
+                  <div><%=link_to "check out!", current_user.cart %></div>
                 <%else%>
                   <div>Empty Cart!</div>
                 <%end%>

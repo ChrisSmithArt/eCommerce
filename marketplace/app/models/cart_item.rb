@@ -3,9 +3,9 @@
 # model for Cart Items
 class CartItem < ApplicationRecord
   belongs_to :cart
-  # validates_associated :cart
+  validates_associated :cart
   belongs_to :service_offer
-  # validates_associated :service_offer
+  validates_associated :service_offer
 
   # validates :quanity, presence: true
   # validates :quantity, numericality: { only_integer: true }
