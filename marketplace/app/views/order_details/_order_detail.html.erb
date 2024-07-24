@@ -1,0 +1,9 @@
+
+
+
+<div class="grid grid-cols-1 grid-flow-row gap-4 bg-gray-400 rounded-lg mx-auto p-5">
+    <div><%=current_user.user_name%>'s Order from <%=order_detail.created_at%></div>
+<%= render order_detail.order_items%>
+</div>
+
+

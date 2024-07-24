@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_15_171106) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_24_200129) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -126,13 +126,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_15_171106) do
     t.integer "price_before_tax"
     t.integer "user_id", null: false
     t.integer "service_offer_id", null: false
-    t.integer "order_details_id", null: false
+    t.integer "order_detail_id", null: false
     t.integer "booking_id", null: false
     t.integer "order_item_status_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_order_items_on_booking_id"
-    t.index ["order_details_id"], name: "index_order_items_on_order_details_id"
+    t.index ["order_detail_id"], name: "index_order_items_on_order_detail_id"
     t.index ["order_item_status_id"], name: "index_order_items_on_order_item_status_id"
     t.index ["service_offer_id"], name: "index_order_items_on_service_offer_id"
     t.index ["user_id"], name: "index_order_items_on_user_id"
@@ -200,7 +200,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_15_171106) do
   add_foreign_key "likes", "users"
   add_foreign_key "order_details", "users"
   add_foreign_key "order_items", "bookings"
-  add_foreign_key "order_items", "order_details", column: "order_details_id"
+  add_foreign_key "order_items", "order_details"
   add_foreign_key "order_items", "order_item_statuses"
   add_foreign_key "order_items", "service_offers"
   add_foreign_key "order_items", "users"

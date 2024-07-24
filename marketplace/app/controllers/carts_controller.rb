@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   end
 
   def show
+    @order_detail = OrderDetail.new
   end
 
   def add_to_cart

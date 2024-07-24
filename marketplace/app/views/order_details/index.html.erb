@@ -1,4 +1,6 @@
-<div>
-  <h1 class="font-bold text-4xl">OrderDetails#index</h1>
-  <p>Find me in app/views/order_details/index.html.erb</p>
-</div>
+<%= render "application/header" %>
+
+<%= render @order_details%>
+
+<h2> <%= current_user.user_name%>'s Orders</h2>
+<%= render "application/footer" %>

@@ -26,12 +26,22 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
-  resources :carts
+
+  resources :order_details
+  resources :order_items
+  resources :bookings
+
+  resources :carts do
+    resources :order_details
+    resources :order_items
+    resources :bookings
+  end
 
   resources :users do
     resources :service_offers
     resources :carts
     resources :cart_items
+    resources :bookings
   end
 
   resources :service_offers do

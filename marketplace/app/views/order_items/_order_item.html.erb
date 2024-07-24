@@ -1,0 +1,13 @@
+<div class="bg-gray-200 rounded-lg shadow-2xl p-2">
+    <div class="flex items-center space-x-4">
+        <div>
+            <%= order_item.service_offer.service_offer_name %> from <%= order_item.user.user_name %>
+        </div>
+        <div>
+            <%= order_item.booking.id%>
+        </div>
+        <div>
+            $<%= Money.from_cents(order_item.price_before_tax, "CAD")%>
+        </div>
+    </div>
+</div>
