@@ -10,4 +10,8 @@ class OrderDetail < ApplicationRecord
     %w[created_at id id_value stripe_item_id time_of_sale_gst time_of_sale_hst time_of_sale_pst
        time_of_sale_qst updated_at user_id]
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["order_items", "user"]
+  end
 end

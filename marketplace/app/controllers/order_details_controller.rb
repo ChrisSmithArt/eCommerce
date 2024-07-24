@@ -1,4 +1,5 @@
 class OrderDetailsController < ApplicationController
+  before_action :set_breadcrumbs
   def create
     @order_details = OrderDetail.create!(
       user_id:          current_user.id,
@@ -33,8 +34,7 @@ class OrderDetailsController < ApplicationController
   end
 
   def show
-    @q = User.ransack(params[:q])
-    @order_details = @q.result.page(params[:page]).per(3)
+    @order_detail = OrderDetail.find(params[:id])
     @service_types = ServiceType.all
 
     add_breadcrumb("home", root_path)
@@ -43,5 +43,9 @@ class OrderDetailsController < ApplicationController
   def index
     @order_details = OrderDetail.where(user_id: current_user.id)
     @service_types = ServiceType.all
+  end
+
+  def set_breadcrumbs
+    add_breadcrumb("Home", root_path)
   end
 end

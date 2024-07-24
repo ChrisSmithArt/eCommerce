@@ -14,4 +14,8 @@ class OrderItem < ApplicationRecord
     %w[booking_id created_at id id_value order_detail_id order_item_status_id price_before_tax
        service_offer_id updated_at user_id]
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["booking", "like", "order_detail", "order_item_status", "service_offer", "user"]
+  end
 end

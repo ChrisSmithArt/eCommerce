@@ -5,7 +5,17 @@
                 <% if current_user.cart.cart_items.exists?%>
                   <%= render current_user.cart.cart_items%>
                   <div>Total before taxes: $<%=Money.from_cents(current_user.cart.total, "CAD")%></div>
-                  <div><%=link_to "check out!", current_user.cart %></div>
+                  <%pst=(current_user.cart.total*current_user.tax_rate_by_location.current_pst)/100000%>
+                  <%gst=(current_user.cart.total*current_user.tax_rate_by_location.current_gst)/100000%>
+                  <%hst=(current_user.cart.total*current_user.tax_rate_by_location.current_hst)/100000%>
+                  <%qst=(current_user.cart.total*current_user.tax_rate_by_location.current_qst)/100000%>
+                  
+                  <div><%=pst.zero? ? " " : "PST: #{Money.from_cents(pst, "CAD")}"%></div>
+                  <div><%=gst.zero? ? " " : "GST: #{Money.from_cents(gst, "CAD")}"%></div>
+                  <div><%=hst.zero? ? " " : "HST: #{Money.from_cents(hst, "CAD")}"%></div>
+                  <div><%=qst.zero? ? " " : "QST: #{Money.from_cents(qst, "CAD")}"%></div>
+
+                  <div>Total after taxes: <%=(Money.from_cents(current_user.cart.total+pst+gst+hst+qst, "CAD"))%> </div>
                 <%else%>
                   <div>Empty Cart!</div>
                 <%end%>
