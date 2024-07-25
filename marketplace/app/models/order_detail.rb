@@ -14,4 +14,8 @@ class OrderDetail < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["order_items", "user"]
   end
+
+  def display_name
+    "Order #{id}"
+  end
 end

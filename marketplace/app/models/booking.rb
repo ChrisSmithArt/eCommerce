@@ -16,4 +16,12 @@ class Booking < ApplicationRecord
     %w[booking_description caldotcom_link created_at google_forms_link id id_value service_offer_id
        updated_at user_id]
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["order_item", "service_offer", "user"]
+  end
+
+  def display_name
+    "Booking #{id}"
+  end
 end

@@ -11,4 +11,8 @@ class OrderItemStatus < ApplicationRecord
   def self.ransackable_attributes(_auth_object = nil)
     %w[created_at id id_value status updated_at]
   end
+
+  def display_name
+    status
+  end
 end

@@ -1,0 +1,30 @@
+<div class="bg-gray-200 rounded-lg shadow-2xl p-2">
+    
+    <% if local_assigns[:full_booking] %>
+    <div>
+        <div>
+            <%= link_to booking.service_offer.service_offer_name, booking.service_offer %> from <%= link_to booking.service_offer.user.user_name, booking.service_offer.user %>
+            <span><%= link_to "Order Information", booking.order_item.order_detail%></span>
+        </div>
+        <div>
+            <%= booking.booking_description%>
+        </div>
+        <div>
+            Status: <%=booking.order_item.order_item_status.status%>
+        </div>
+        <div>
+            <%=link_to "Request Info(Google Forms)", "http://#{booking.google_forms_link}"%>
+        </div>
+        <div>
+            <%=link_to "Scheduel Meeting/Session(Cal.com)", "http://#{booking.caldotcom_link}"%>
+        </div>
+    </div>
+    <% else %>
+        <div class="text-center">
+            <div><strong>Booking: </strong><%= link_to booking.service_offer.service_offer_name, booking %></div> 
+            <div><strong>Provider: </strong> <%= link_to booking.service_offer.user.user_name, booking.service_offer.user %></div> 
+            <div><strong>Status: </strong><%=booking.order_item.order_item_status.status%> </div>
+            <div><%= link_to "Order Information", booking.order_item.order_detail%></div>
+        </div>
+    <%end%>
+</div>

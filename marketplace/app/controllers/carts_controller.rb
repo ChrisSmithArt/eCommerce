@@ -4,8 +4,6 @@ class CartsController < ApplicationController
 
   def show
     @order_detail = OrderDetail.new
-  end
-
-  def add_to_cart
+    @service_types = ServiceType.all
   end
 end

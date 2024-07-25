@@ -22,7 +22,9 @@ class User < ApplicationRecord
   # validates_associated :order_items
 
   has_one_attached :image do |attachable|
-    attachable.variant :thumb, resize_to_limit: [100, 100]
+    attachable.variant :thumb, resize_to_fit: [100, 100]
+    attachable.variant :avatar, resize_to_fit: [250, 250]
+    attachable.variant :full, resize_to_fit: [500, 500]
   end
 
   validates :user_name, presence: true

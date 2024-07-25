@@ -1,4 +1,7 @@
-<div>
-  <h1 class="font-bold text-4xl">Bookings#show</h1>
-  <p>Find me in app/views/bookings/show.html.erb</p>
+<%= render "application/header" %>
+
+<div class="space-y-4">
+  <%= render @bookings, full_booking: true%>
 </div>
+
+<%= render "application/footer" %>

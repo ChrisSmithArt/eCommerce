@@ -2,18 +2,18 @@
 
 <div class="bg-gray-200 rounded-lg shadow-2xl p-2">
 <% if local_assigns[:full] %>
-    <div class="flex justify-between">
+    <div class="flex justify-between space-x-5">
         <div>
             <div>
-                <span><%= link_to service_offer.service_offer_name, service_offer%></span> 
-                <span>at $<%= Money.from_cents(service_offer.service_offer_price, "CAD")%> with</span>
-                <span><%= service_offer.slot_availabilty%> Slots</span>
+                <div><%= link_to service_offer.service_offer_name, service_offer%></div> 
+                <div>$<%= Money.from_cents(service_offer.service_offer_price, "CAD")%></div>
+                <div><%= service_offer.slot_availabilty%> Slots</div>
             </div>
         </div>
         <div>
             <%if user_signed_in?%>
                 <%= form_with model: [ service_offer, service_offer.cart_items.build ] do |form| %>
-                <div>
+                <div class="text-center">
                     <%= form.label :quantity%><br>
                     <%= form.hidden_field :id, value: service_offer.id %>
                     <%= form.hidden_field :cart_id, value: current_user.cart.id %>
@@ -32,7 +32,7 @@
 <% else %>
     <div class="flex items-center space-x-4">
         <% if service_offer.user.image.attached? %>
-             <%= image_tag (url_for(service_offer.user.image)), class: "object-contain h-24 w-24 rounded-lg m-0" %>
+             <%= image_tag service_offer.user.image.variant(:thumb), class: "rounded-lg m-0" %>
         <% end %>
         <div>
             <%= link_to service_offer.service_offer_name, service_offer %>

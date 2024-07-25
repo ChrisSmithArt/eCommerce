@@ -31,36 +31,40 @@
             </div>
           <% end %>
     </div>
-    <div class="text-center">
-        <div class="mx-2">
-            <ul class="flex">
-              <% if user_signed_in? %>
-                <li><%= link_to "Hi, #{current_user.user_name}", edit_user_registration_path %></li>
-                <li><%= link_to 'Sign Out', destroy_user_session_path, data: { "turbo-method": :delete } %></li>
-              <% else %>
-                <li><%= link_to 'Sign In', new_user_session_path %></li>
-                <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-              <% end %>
-            </ul>
-        </div>
-        <div class="mx-2">
+    <div>
+      <div class="text-center">Welcome, <%=user_signed_in? ? current_user.user_name : "Guest"%></div>
+      <div class="text-center flex space-x-4">
+        <div class=" bg-gray-200 rounded-lg m-auto p-2">
           <% if user_signed_in? %>
-            <details>
-            <summary><%=current_user.user_name%>'s Cart</summary>
-            <div class="z-50 fixed bg-gray-200 list-outside list-none">
-              <% if current_user.cart%>
-                <% if current_user.cart.cart_items.exists?%>
-                  <%= render current_user.cart.cart_items%>
-                  <div>Total before taxes: $<%=Money.from_cents(current_user.cart.total, "CAD")%></div>
-                  <div><%=link_to "check out!", current_user.cart %></div>
-                <%else%>
-                  <div>Empty Cart!</div>
-                <%end%>
-              <%end%>
-            </div>
-            </details>
-          <% end%>
+            <div><%= link_to "Edit Accont", edit_user_registration_path %></div>
+            <div><%= link_to 'Sign Out', destroy_user_session_path, data: { "turbo-method": :delete } %></div>
+          <% else %>
+            <div><%= link_to 'Sign In', new_user_session_path %></div>
+            <div><%= link_to 'Sign Up', new_user_registration_path %></div>
+          <% end %>
         </div>
+
+          <% if user_signed_in? %>
+            <div class=" bg-gray-200 rounded-lg m-auto p-2">
+              <div><%=link_to "Orders", order_details_path%> / <%=link_to "Bookings", bookings_path%></div>
+              <details>
+                <summary><%=current_user.user_name%>'s Cart</summary>
+                <div class="z-50 fixed bg-gray-200 list-outside list-none">
+                  <% if current_user.cart%>
+                    <% if current_user.cart.cart_items.exists?%>
+                      <%= render current_user.cart.cart_items%>
+                      <div>Total before taxes: $<%=Money.from_cents(current_user.cart.total, "CAD")%></div>
+                      <div><%=link_to "check out!", current_user.cart %></div>
+                    <%else%>
+                      <div>Empty Cart!</div>
+                    <%end%>
+                  <%end%>
+                </div>
+              </details>
+            </div>
+          <% end%>
+          
+      </div>
     </div> 
 </header>
 

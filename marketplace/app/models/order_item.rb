@@ -16,6 +16,6 @@ class OrderItem < ApplicationRecord
   end
 
   def self.ransackable_associations(auth_object = nil)
-    ["booking", "like", "order_detail", "order_item_status", "service_offer", "user"]
+    %w[booking like order_detail order_item_status service_offer user]
   end
 end

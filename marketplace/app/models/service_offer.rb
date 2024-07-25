@@ -17,4 +17,8 @@ class ServiceOffer < ApplicationRecord
   def self.ransackable_associations(_auth_object = nil)
     %w[bookings cart_items order_items service_type user]
   end
+
+  def display_name
+    service_offer_name
+  end
 end

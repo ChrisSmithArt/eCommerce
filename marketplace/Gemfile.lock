@@ -413,6 +413,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kaminari
+  mini_magick (~> 4.13)
   money
   puma (>= 5.0)
   pundit

@@ -1,7 +1,7 @@
-<div class="bg-gray-200 rounded-lg shadow-2xl flex">
+<div class="bg-gray-200 rounded-lg shadow-2xl flex p-2">
 
         <% if user.image.attached? %>
-             <%= image_tag (url_for(user.image)), class: "object-contain h-48 w-48 rounded-lg" %>
+             <%= image_tag user.image.variant(:avatar), class: "rounded-lg m-2" %>
         <% end %>
     <div class="self-center">
         <div>

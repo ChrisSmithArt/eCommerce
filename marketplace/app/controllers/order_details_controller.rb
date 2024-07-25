@@ -10,6 +10,8 @@ class OrderDetailsController < ApplicationController
     )
     @order_details.save
     current_user.cart.cart_items.each do |cart_item|
+      cart_item.service_offer.slot_availabilty -= cart_item.quantity
+      cart_item.service_offer.save
       cart_item.quantity.times do
         @booking = Booking.create!(
           user_id:             current_user.id,
@@ -25,10 +27,13 @@ class OrderDetailsController < ApplicationController
           service_offer_id:     cart_item.service_offer.id,
           order_detail_id:      OrderDetail.last.id,
           booking_id:           @booking.id,
-          order_item_status_id: 1
+          order_item_status_id: 2
         )
         @order_item.save
       end
+      current_user.cart.cart_items.each(&:delete_item)
+      current_user.cart.total = 0
+      current_user.cart.save
     end
     redirect_to root_path
   end

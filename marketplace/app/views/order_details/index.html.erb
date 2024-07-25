@@ -1,6 +1,8 @@
 <%= render "application/header" %>
-
-<%= render @order_details%>
-
 <h2> <%= current_user.user_name%>'s Orders</h2>
+
+<div class="space-y-5">
+<%= render @order_details%>
+</div>
+
 <%= render "application/footer" %>
