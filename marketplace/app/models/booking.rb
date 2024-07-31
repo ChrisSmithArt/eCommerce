@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
   validates_associated :user
   belongs_to :service_offer
   validates_associated :service_offer
-  has_one :order_item
+  has_one(:order_item, dependent: :destroy)
   validates_associated :order_item
 
   validates :google_forms_link, presence: true
@@ -17,7 +17,7 @@ class Booking < ApplicationRecord
        updated_at user_id]
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(_auth_object = nil)
     ["order_item", "service_offer", "user"]
   end
 

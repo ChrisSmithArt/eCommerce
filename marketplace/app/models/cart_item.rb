@@ -7,8 +7,8 @@ class CartItem < ApplicationRecord
   belongs_to :service_offer
   validates_associated :service_offer
 
-  # validates :quanity, presence: true
-  # validates :quantity, numericality: { only_integer: true }
+  validates :quantity, presence: true
+  validates :quantity, numericality: { only_integer: true }
 
   def add_one_item
     increment(:quantity)

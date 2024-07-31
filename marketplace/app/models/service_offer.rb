@@ -5,9 +5,15 @@ class ServiceOffer < ApplicationRecord
   belongs_to :user
   belongs_to :service_type
 
-  has_many :bookings
-  has_many :cart_items
-  has_many :order_items
+  has_many(:bookings, dependent: :destroy)
+  has_many(:cart_items, dependent: :destroy)
+  has_many(:order_items, dependent: :destroy)
+
+  validates :service_offer_name, presence: true
+  validates :service_offer_notes, presence: true
+  validates :service_offer_price, presence: true
+
+  validates :service_offer_price, numericality: { only_integer: true }
 
   def self.ransackable_attributes(_auth_object = nil)
     %w[caldotcom_link created_at google_forms_link id id_value service_offer_name

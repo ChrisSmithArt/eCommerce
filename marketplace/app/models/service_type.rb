@@ -2,7 +2,10 @@
 
 # model for a Type of Service which is a Category for Service Offers
 class ServiceType < ApplicationRecord
-  has_many :service_offers
+  has_many(:service_offers, dependent: :destroy)
+
+  validates :service_type_description, presence: true
+  validates :service_type_name, presence: true
 
   def self.ransackable_associations(_auth_object = nil)
     ["service_offers"]

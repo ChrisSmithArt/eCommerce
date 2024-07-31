@@ -94,3 +94,5 @@ group :test do
 end
 
 gem "mini_magick", "~> 4.13"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development

@@ -14,7 +14,7 @@
                 <% order_detail.order_items.each do |order_item|%>
                     <%total += order_item.price_before_tax%>
                 <%end%>
-                <div>Total before taxes: $<%=Money.from_cents(current_user.cart.total, "CAD")%></div>
+                <div>Total before taxes: $<%=Money.from_cents(total, "CAD")%></div>
                 <%pst=(total*order_detail.time_of_sale_pst)/100000%>
                 <%gst=(total*order_detail.time_of_sale_gst)/100000%>
                 <%hst=(total*order_detail.time_of_sale_hst)/100000%>

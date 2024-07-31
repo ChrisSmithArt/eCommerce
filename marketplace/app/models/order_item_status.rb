@@ -2,7 +2,9 @@
 
 # model for the various Statuses for an Order Item
 class OrderItemStatus < ApplicationRecord
-  has_many :order_items
+  has_many(:order_items, dependent: :destroy)
+
+  validates :status, presence: true
 
   def self.ransackable_associations(_auth_object = nil)
     ["order_items"]

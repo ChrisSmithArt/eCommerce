@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
-  def index
-  end
+  def index; end
 
   def show
     @order_detail = OrderDetail.new

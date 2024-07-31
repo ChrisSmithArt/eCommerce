@@ -3,15 +3,6 @@ class CartItemsController < ApplicationController
     @cart_items = CartItem.all
   end
 
-  def create
-    @service_offer = ServiceOffer.find(params[:cart_item][:id])
-    @cart = current_user.cart
-    @cart_item = CartItem.create!(cart_item_params)
-    @cart_item.cart.total += @cart_item.service_offer.service_offer_price * @cart_item.quantity
-    @cart_item.cart.save
-    redirect_back_or_to root_path
-  end
-
   def add
     @cart_item = CartItem.find(params[:id])
     @cart_item.add_one_item
@@ -33,6 +24,14 @@ class CartItemsController < ApplicationController
     @cart_item.cart.total -= @cart_item.service_offer.service_offer_price * @cart_item.quantity
     @cart_item.cart.save
     @cart_item.delete_item
+    redirect_back_or_to root_path
+  end
+
+  def create
+    @service_offer = ServiceOffer.find(params[:cart_item][:id])
+    @cart_item = CartItem.create!(cart_item_params)
+    @cart_item.cart.total += @cart_item.service_offer.service_offer_price * @cart_item.quantity
+    @cart_item.cart.save
     redirect_back_or_to root_path
   end
 

@@ -1,6 +1,6 @@
 class OrderDetailsController < ApplicationController
   before_action :set_breadcrumbs
-  def create
+  def create # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
     @order_details = OrderDetail.create!(
       user_id:          current_user.id,
       time_of_sale_gst: current_user.tax_rate_by_location.current_gst,
@@ -27,7 +27,7 @@ class OrderDetailsController < ApplicationController
           service_offer_id:     cart_item.service_offer.id,
           order_detail_id:      OrderDetail.last.id,
           booking_id:           @booking.id,
-          order_item_status_id: 2
+          order_item_status_id: 4
         )
         @order_item.save
       end
@@ -35,7 +35,7 @@ class OrderDetailsController < ApplicationController
       current_user.cart.total = 0
       current_user.cart.save
     end
-    redirect_to root_path
+    redirect_to order_details_path
   end
 
   def show
@@ -46,7 +46,7 @@ class OrderDetailsController < ApplicationController
   end
 
   def index
-    @order_details = OrderDetail.where(user_id: current_user.id)
+    @order_details = OrderDetail.order(created_at: :desc).where(user_id: current_user.id)
     @service_types = ServiceType.all
   end
 
