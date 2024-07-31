@@ -96,3 +96,5 @@ end
 gem "mini_magick", "~> 4.13"
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem 'seed_dump'

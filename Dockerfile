@@ -1,72 +1,27 @@
-# syntax = docker/dockerfile:1
+# Use the official Ruby image as a base image
+FROM ruby:3.3.0
 
-# Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
-ARG RUBY_VERSION=3.3.0
-FROM ruby:$RUBY_VERSION-slim as base
+# Install dependencies
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs sqlite3
 
-# Rails app lives here
-WORKDIR /rails
+# Set the working directory inside the container
+WORKDIR /eComm
 
-# Set production environment
-ENV BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development:test" \
-    RAILS_ENV="production"
+# Copy the Gemfile and Gemfile.lock into the container
+COPY Gemfile Gemfile.lock ./
 
-# Update gems and bundler
-RUN gem update --system --no-document && \
-    gem install -N bundler
+# Install the RubyGems specified in the Gemfile
+RUN bundle install
 
+# Copy the rest of the application code into the container
+COPY . .
 
-# Throw-away build stage to reduce size of final image
-FROM base as build
+# Precompile assets
+RUN bundle exec rake assets:precompile
 
-# Install packages needed to build gems
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential libvips pkg-config
-
-# Install application gems
-COPY --link Gemfile Gemfile.lock ./
-RUN bundle install && \
-    bundle exec bootsnap precompile --gemfile && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
-
-# Copy application code
-COPY --link . .
-
-# Precompile bootsnap code for faster boot times
-RUN bundle exec bootsnap precompile app/ lib/
-
-# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
-
-# Final stage for app image
-FROM base
-
-# Install packages needed for deployment
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl imagemagick libsqlite3-0 libvips && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
-# Copy built artifacts: gems, application
-COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
-COPY --from=build /rails /rails
-
-# Run and own only the runtime files as a non-root user for security
-RUN groupadd --system --gid 1000 rails && \
-    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
-    mkdir /data && \
-    chown -R 1000:1000 db log storage tmp /data
-USER 1000:1000
-
-# Deployment options
-ENV DATABASE_URL="sqlite3:///data/production.sqlite3"
-
-# Entrypoint prepares the database.
-ENTRYPOINT ["/rails/bin/docker-entrypoint"]
-
-# Start the server by default, this can be overwritten at runtime
+# Expose the port that the application will run on
 EXPOSE 3000
-VOLUME /data
-CMD ["./bin/rails", "server"]
+
+
+# Run database migrations, seed the database, and start the Rails server
+CMD ["bash", "-c", "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails s -b '0.0.0.0'"]
