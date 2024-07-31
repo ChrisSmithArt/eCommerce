@@ -42,7 +42,7 @@ class User < ApplicationRecord
   end
 
   def self.ransackable_attributes(_auth_object = nil)
-    %w[address created_at description email id id_value password tax_rate_by_location_id
+    %w[address created_at description email id id_value tax_rate_by_location_id
        updated_at user_name]
   end
 
