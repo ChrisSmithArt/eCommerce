@@ -1,79 +1,31 @@
-name: Verify
+name: CI
 on: [push]
-
 jobs:
-  linters:
-    name: Linters
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby:
+          - '3.3.x'
+        rails:
+          - 'rails_v7.0.x'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Ruby and install gems
-        uses: ruby/setup-ruby@v1
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup System
+        run: |
+          sudo apt-get install libsqlite3-dev
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
         with:
-          bundler-cache: true
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: yarn
-
-      - name: Install packages
-        run: |
-          yarn install --pure-lockfile
-
-      - name: Run linters
-        run: |
-          bin/rubocop --parallel
-          bin/stylelint
-          bin/prettier
-          bin/eslint
-
-      - name: Run security checks
-        run: |
-          bin/bundler-audit --update
-          bin/brakeman -q -w2
-
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: sqlite3:3.37.2
+          ruby-version: ${{ matrix.ruby }}
+      - name: Bundle
         env:
-          POSTGRES_USER: myapp
-          POSTGRES_DB: myapp_test
-          POSTGRES_PASSWORD: ""
-        ports: ["5432:5432"]
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Ruby and install gems
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: yarn
-
-      - name: Install packages
+          MTSR_RAILS_VERSION: ${{ matrix.rails }}
         run: |
-          yarn install --pure-lockfile
-
-      - name: Setup test database
-        env:
-          RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: myapp
-        run: |
-          bin/rails db:setup
-
-      - name: Run tests
-        run: bin/rspec
+          export BUNDLE_GEMFILE="${GITHUB_WORKSPACE}/gemfiles/${MTSR_RAILS_VERSION}.gemfile"
+          gem uninstall -aIx bundler
+          gem install bundler -v 1.17.3
+          bundle install --jobs 4 --retry 3
+      - name: Test
+        run: bundle exec rake
