@@ -1,12 +1,44 @@
-name: My workflow
 on: [push, pull_request]
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_ROOT_PASSWORD: password
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: ruby/setup-ruby@v1
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.3.0' # Not needed with a `.ruby-version` or `.tool-versions`
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - run: bundle exec rake
+        ruby-version: 3.3.0 # Adjust to your Ruby version
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Set up SQLite3
+      run: sudo apt-get install -y sqlite3 libsqlite3-dev
+
+    - name: Setup DB
+      run: |
+        bundle exec rails db:create
+        bundle exec rails db:schema:load
+
+    - name: Run tests
+      run: |
+        bundle exec rails test
