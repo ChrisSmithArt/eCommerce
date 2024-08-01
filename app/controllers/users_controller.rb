@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def index
     # @users = User.order(:user_name).page(params[:page]).per(6)
 
-    @q = User.order(:user_name).ransack(params[:q])
+    @q = User.joins(:service_offers).group("user_id").having("count(user_id) > 0").order(:user_name).ransack(params[:q])
+
     @users = @q.result.page(params[:page]).per(3)
 
     @service_types = ServiceType.all
