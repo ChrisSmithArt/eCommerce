@@ -163,256 +163,187 @@ User.create!([
              ])
 
 ActiveStorage::Blob.create!([
-                              { key: "sl3cbvrk1rj0pnymf1gkkxw2uhut", filename: "moon.png",
+                              { key: "glnebaslcx5lvkq69clronhpyh6r", filename: "mask.png",
                               content_type: "image/png",
-                              metadata: { "identified" => true, "analyzed" => true },
-                              service_name: "local",
-                            byte_size: 259_425, checksum: "Hf4M3dQ3VYW8DdSAkjYG0Q==" },
-                              { key: "fxcgh4d6529wicfo29xi9mx92r6j", filename: "Chris.png",
+metadata: { "identified" => true, "width" => 336, "height" => 298, "analyzed" => true },
+service_name: "amazon", byte_size: 75_338, checksum: "q54qaLy6CNy9e2BLZ0flIg==" },
+                              { key: "923jdqsjcow8sq12wj4pi2ms9bi9", filename: "hero-man.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 780, "height" => 757,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 532_868,
+                            checksum: "Qvl3bke3/tkEqqxA+1WBOQ==" },
+                              { key: "2172vf3y8zks5vtjcdgetao5rexk", filename: "waterdeep.png",
                               content_type: "image/png",
-                            metadata: { "identified" => true, "analyzed" => true },
-                            service_name: "local", byte_size: 242_683,
-                            checksum: "RtCGRcRE1u7QamIG9oC5uA==" },
-                              { key: "15oljii9uue8v1ka6jel8kyt6zfw", filename: "Jordan.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "analyzed" => true },
-                            service_name: "local", byte_size: 2_522_992,
+                            metadata: { "identified" => true, "width" => 1619, "height" => 2508,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 2_522_992,
                             checksum: "Bu3j4Bus+leh16qfXvxuZg==" },
-                              { key: "qy6qapn0vfe4xvtg4blqnh2tl9qm", filename: "Zach.png",
+                              { key: "294jtxot6e828bkzsvf7pd9l0doh", filename: "WW-Link.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 328, "height" => 277,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 33_391,
+                            checksum: "DS+kEoAD7yLI0gYIFQNsEg==" },
+                              { key: "okf04yo95fiid75i5ule9m9vhi1h", filename: "discord.png",
                               content_type: "image/png",
-                            metadata: { "identified" => true, "analyzed" => true },
-                            service_name: "local", byte_size: 448_012,
-                            checksum: "oqB23uQFxVIfomlJceBuTg==" },
-                              { key: "gf5bm3rgbs3hrwfx0rx6r94bvdxh", filename: "Bill.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "analyzed" => true },
-                            service_name: "local", byte_size: 10_386,
+                            metadata: { "identified" => true, "width" => 619, "height" => 470,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 10_386,
                             checksum: "10hl4QlPWsCg54KHVEn/Zg==" },
-                              { key: "0a5vc1633wzq7d4g4vuyx4kyqitk", filename: "Andrew.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "analyzed" => true },
-                            service_name: "local", byte_size: 215_341,
-                            checksum: "GylDxRfNBgwgX15L5kYx0Q==" },
-                              { key: "2ntdxmlaalo0cielpz5dlpdq6w07", filename: "Bill.png",
-                              content_type: "image/png",
-                            metadata: { "identified"=>true }, service_name: "local",
-                            byte_size: 2720, checksum: "+qixcYA4o7XNMbah8Ic7JQ==" },
-                              { key: "u368pax3t3w7niqanejgnbkdgfbi", filename: "Jordan.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 65, "height" => 100,
-                            "analyzed" => true }, service_name: "local",
-                            byte_size: 12_845, checksum: "f79QkdXczB4pksULaqFekQ==" },
-                              { key: "j1mquaiupd2cm3q60tofyyk657a7", filename: "Chris.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 100, "height" => 89,
-                            "analyzed" => true }, service_name: "local", byte_size: 13_713,
-                            checksum: "ho3oAcp5duKvZN/RVJdYRA==" },
-                              { key: "he1vh4fg57vtl8ndvhsytp3tb5e0", filename: "Bill.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 250,
-                            "height" => 190, "analyzed" => true }, service_name: "local",
-                            byte_size: 5330, checksum: "B6tJLsU4jhclLmj+A3kCBA==" },
-                              { key: "mf83p50oocv3jezdtckcc5yiq5vn", filename: "Andrew.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 246, "height" => 250,
-                            "analyzed" => true }, service_name: "local", byte_size: 82_931,
-                            checksum: "ITpzU3M0ylDwITs6EedwuQ==" },
-                              { key: "3111hpa0goza5ftoxyym25r46g7d", filename: "Bill.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 500, "height" => 380,
-                            "analyzed" => true }, service_name: "local", byte_size: 16_279,
-                            checksum: "E72x0pi6+cFFviiD+/W5XQ==" },
-                              { key: "p1otz9pxoicn6dea80wu9lhp89zp", filename: "Andrew.png",
-                              content_type: "image/png",
-                            metadata: { "identified"=>true }, service_name: "local",
-                            byte_size: 133_224, checksum: "8TXqQ3RLOCRowcNO9M5yng==" },
-                              { key: "iuok96ycc0r9impfire9clbeor7e", filename: "Bill.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 500, "height" => 380,
-                            "analyzed" => true }, service_name: "local", byte_size: 16_279,
-                            checksum: "siCh0G92BAyJB4rEcC55hg==" },
-                              { key: "vgrs0lq2c6uqlfirde5vcyjnubm5", filename: "Andrew.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 246, "height" => 250,
-                            "analyzed" => true }, service_name: "local", byte_size: 82_931,
-                            checksum: "HFH3l5StOjHEEX59E8jh3w==" },
-                              { key: "961qc4okdcy5cyx4d86z7zr9hm0z", filename: "Bill.png",
+                              { key: "dxpx34ago5v7r0qy019iswm3kbf4", filename: "WW-Link.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 250, "height" => 211,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 21_275,
+                            checksum: "lZzfHR4BI1lQl3cOU/igMA==" },
+                              { key: "hcm9ht7z2j5sndrjuzfkdl5i3z89", filename: "discord.png",
                               content_type: "image/png",
                             metadata: { "identified" => true, "width" => 250, "height" => 190,
-                            "analyzed" => true }, service_name: "local", byte_size: 5330,
-                            checksum: "DOawad/VK7sY6Tm1fcLekA==" },
-                              { key: "7c8vtenml47bld0orelkwim7xy86", filename: "Andrew.png",
+                            "analyzed" => true }, service_name: "amazon", byte_size: 5330,
+                            checksum: "0eOl+XaJtEiT2AkedUka5w==" },
+                              { key: "vbtptzhuuk3d8s8anu9i3jf0o2qt", filename: "mask.png",
                               content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 493, "height" => 500,
-                            "analyzed" => true }, service_name: "local", byte_size: 229_525,
-                            checksum: "bI9uNrY3HpT2DXimnWxDKQ==" },
-                              { key: "besctthgbs7qw6agfuinppymsp0z", filename: "Chris.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 250, "height" => 223,
-                            "analyzed" => true }, service_name: "local", byte_size: 61_189,
-                            checksum: "MU603Eh1by0JfnaO3bAsIQ==" },
-                              { key: "0txq29w9zyijlj8fpn1b7z8yawr0", filename: "Zach.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 250, "height" => 196,
-                            "analyzed" => true }, service_name: "local", byte_size: 111_390,
-                            checksum: "ZTDTc8+1iKehR8/qBPTKmA==" },
-                              { key: "028rvpvwablbe92lsh7rrkwpxltg", filename: "Jordan.png",
+                            metadata: { "identified" => true, "width" => 250, "height" => 222,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 69_616,
+                            checksum: "0mQ2cd2MMtVyutW45yWVqg==" },
+                              { key: "ylxrnyshylpjtzb9v67en4mjxnpk", filename: "hero-man.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 250, "height" => 243,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 85_454,
+                            checksum: "i/pkLJnsiW1Jy/dusF2vRQ==" },
+                              { key: "sjmlawyc0djcc4jddv1uhtxekln2", filename: "waterdeep.png",
                               content_type: "image/png",
                             metadata: { "identified" => true, "width" => 161, "height" => 250,
-                            "analyzed" => true }, service_name: "local", byte_size: 59_341,
-                            checksum: "FFzYedJErNSiBMO2++HfuA==" },
-                              { key: "9bg4zkeq4hncisrckuwag7hpbnrg", filename: "Chris.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 500, "height" => 446,
-                            "analyzed" => true }, service_name: "local", byte_size: 193_904,
-                            checksum: "C9YRkUUxj8dT3kDuV/iY9A==" },
-                              { key: "xnmskhnmph0fxx747jxygnimotv8", filename: "Zach.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 100, "height" => 78,
-                            "analyzed" => true }, service_name: "local", byte_size: 19_575,
-                            checksum: "oB811+iBQb8Iho/qxyNQgg==" },
-                              { key: "keucpools0mg3khq6vxy59k3wk6y", filename: "Chris.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 100, "height" => 89,
-                            "analyzed" => true }, service_name: "local", byte_size: 13_713,
-                            checksum: "jknnn1zrOwk+K07dX95Dpw==" },
-                              { key: "2nd91v6ee1usg3dxjmea1ivfsa8l", filename: "Bill.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 100, "height" => 76,
-                            "analyzed" => true }, service_name: "local", byte_size: 2720,
-                            checksum: "7zcREl3Y8H0bB6zDQqS2ig==" },
-                              { key: "wp5krkxhpuzgza3uq388f8zn6f4u", filename: "Jordan.png",
-                              content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 65, "height" => 100,
-                            "analyzed" => true }, service_name: "local", byte_size: 12_845,
-                            checksum: "GWEPV1Ocnc7qlU3hXD91dg==" },
-                              { key: "d6yxsf5sg1df47rgh8klygtdy3ng", filename: "Jordan.png",
+                            "analyzed" => true }, service_name: "amazon", byte_size: 59_341,
+                            checksum: "5pU8kjQXVVf6xBaG2YD2JQ==" },
+                              { key: "weh9qd0lc20g96k8a9wq8cpwj3gr", filename: "waterdeep.png",
                               content_type: "image/png",
                             metadata: { "identified" => true, "width" => 323, "height" => 500,
-                            "analyzed" => true }, service_name: "local", byte_size: 192_069,
-                            checksum: "fULPHUfOe2km8ghN3z85BA==" },
-                              { key: "539muxjlqkw893bm088l2cz5kglp", filename: "Andrew.png",
+                            "analyzed" => true }, service_name: "amazon", byte_size: 192_069,
+                            checksum: "h4BZoHvc+ulM0cx52ho6Iw==" },
+                              { key: "7s422ayyoqmnfztped0pxgjlwacd", filename: "WW-Link.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 500, "height" => 422,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 50_459,
+                            checksum: "nUw2BNx8K8Bwo59FejBGoA==" },
+                              { key: "1ast3n9vrat118kfuxufa64n7sal", filename: "discord.png",
                               content_type: "image/png",
-                            metadata: { "identified" => true, "width" => 99, "height" => 100,
-                            "analyzed" => true }, service_name: "local", byte_size: 17_891,
-                            checksum: "PEAT7voqlwefFpR3a8M5sQ==" }
+                            metadata: { "identified" => true, "width" => 500, "height" => 380,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 16_279,
+                            checksum: "m3iKZg0rUd6LNbXFJbzmpA==" },
+                              { key: "renzf2lfl5jlhp7ll2l6b5rffojt", filename: "mask.png",
+                              content_type: "image/png",
+                            metadata: { "identified" => true, "width" => 500, "height" => 443,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 209_682,
+                            checksum: "tlcxx7ZvP5Xt4pvznd7AOg==" },
+                              { key: "uhse62prkpunobg9uthqmbdglpew", filename: "hero-man.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 500, "height" => 485,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 261_108,
+                            checksum: "0fDi0p3THU1rTQIR9M2s5w==" },
+                              { key: "eulplj3fpxiocjuore1eebjlzn77", filename: "mask.png",
+                              content_type: "image/png",
+                            metadata: { "identified" => true, "width" => 100, "height" => 89,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 15_424,
+                            checksum: "QAN0VCJ7OWW9HOC7mNAD6w==" },
+                              { key: "80id9p47ow3clhhjkbqoct6hukz5", filename: "discord.png",
+                              content_type: "image/png",
+                            metadata: { "identified" => true, "width" => 100, "height" => 76,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 2720,
+                            checksum: "JOFtjBLwfKD61hJfBj5pcQ==" },
+                              { key: "dxy8powabbpuh2b0z3ui2exg5u7k", filename: "waterdeep.png",
+                              content_type: "image/png",
+                            metadata: { "identified" => true, "width" => 65, "height" => 100,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 12_845,
+                            checksum: "Ca1VNTcNtXu0GG9wRNlaPw==" },
+                              { key: "rshfza9gl40rdtopqsewdcpiitdf", filename: "WW-Link.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 100, "height" => 84,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 5898,
+                            checksum: "LoFPwgx+0rzt/6IfC1C+MA==" },
+                              { key: "kunqxqz8q9tf2itjn66uucmp09wp", filename: "hero-man.jpg",
+                              content_type: "image/jpeg",
+                            metadata: { "identified" => true, "width" => 100, "height" => 97,
+                            "analyzed" => true }, service_name: "amazon", byte_size: 22_954,
+                            checksum: "W4t0qgF55oYHCKqE+qtQdg==" }
                             ])
 
 ActiveStorage::VariantRecord.create!([
-                                       { blob_id:          5,
-                                         variation_digest: "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y=" },
-                                       { blob_id:          3,
-                                         variation_digest: "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y=" },
-                                       { blob_id:          2,
-                                         variation_digest: "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y=" },
-                                       { blob_id:          5,
-                                         variation_digest: "oY0vpDnCSCkHnDGp1YbIHGT2RG8=" },
-                                       { blob_id:          6,
-                                         variation_digest: "oY0vpDnCSCkHnDGp1YbIHGT2RG8=" },
-                                       { blob_id:          5,
-                                         variation_digest: "grOmaDDD+qNEEvS3BZzaB227f44=" },
-                                       { blob_id:          6,
-                                         variation_digest: "grOmaDDD+qNEEvS3BZzaB227f44=" },
-                                       { blob_id:          5,
-                                         variation_digest: "Bwk2KnB+OXmuJ8AZwOWWxe3HQLc=" },
-                                       { blob_id:          6,
-                                         variation_digest: "kwyO3uzvkt+rcijHycD96q9j0ME=" },
-                                       { blob_id:          5,
-                                         variation_digest: "kwyO3uzvkt+rcijHycD96q9j0ME=" },
-                                       { blob_id:          6,
-                                         variation_digest: "Bwk2KnB+OXmuJ8AZwOWWxe3HQLc=" },
-                                       { blob_id:          2,
-                                         variation_digest: "kwyO3uzvkt+rcijHycD96q9j0ME=" },
                                        { blob_id:          4,
+                                         variation_digest: "1MP3AY8ECyMYxzbysAPgEuDLmk4=" },
+                                       { blob_id:          5,
                                          variation_digest: "kwyO3uzvkt+rcijHycD96q9j0ME=" },
-                                       { blob_id:          3,
+                                       { blob_id:          1,
                                          variation_digest: "kwyO3uzvkt+rcijHycD96q9j0ME=" },
                                        { blob_id:          2,
+                                         variation_digest: "1MP3AY8ECyMYxzbysAPgEuDLmk4=" },
+                                       { blob_id:          3,
+                                         variation_digest: "kwyO3uzvkt+rcijHycD96q9j0ME=" },
+                                       { blob_id:          3,
                                          variation_digest: "Bwk2KnB+OXmuJ8AZwOWWxe3HQLc=" },
                                        { blob_id:          4,
-                                         variation_digest: "kew+Jjn6rrgNk4/Pj4n+LM0hZVg=" },
+                                         variation_digest: "9HYOcvhq8775Q8hxsZ+YtV4+l38=" },
+                                       { blob_id:          5,
+                                         variation_digest: "Bwk2KnB+OXmuJ8AZwOWWxe3HQLc=" },
+                                       { blob_id:          1,
+                                         variation_digest: "Bwk2KnB+OXmuJ8AZwOWWxe3HQLc=" },
                                        { blob_id:          2,
+                                         variation_digest: "9HYOcvhq8775Q8hxsZ+YtV4+l38=" },
+                                       { blob_id:          1,
                                          variation_digest: "kew+Jjn6rrgNk4/Pj4n+LM0hZVg=" },
                                        { blob_id:          5,
                                          variation_digest: "kew+Jjn6rrgNk4/Pj4n+LM0hZVg=" },
                                        { blob_id:          3,
                                          variation_digest: "kew+Jjn6rrgNk4/Pj4n+LM0hZVg=" },
-                                       { blob_id:          3,
-                                         variation_digest: "Bwk2KnB+OXmuJ8AZwOWWxe3HQLc=" },
-                                       { blob_id:          6,
-                                         variation_digest: "kew+Jjn6rrgNk4/Pj4n+LM0hZVg=" }
+                                       { blob_id:          4,
+                                         variation_digest: "wj2EsykI81rCJCK6QU6D9xirR/c=" },
+                                       { blob_id:          2,
+                                         variation_digest: "wj2EsykI81rCJCK6QU6D9xirR/c=" }
                                      ])
+
 ActiveStorage::Attachment.create!([
                                     { name: "image", record_type: "User", record_id: 1,
-                                      blob_id: 2 },
-                                    { name: "image", record_type: "User", record_id: 4,
-                                      blob_id: 3 },
+blob_id: 1 },
                                     { name: "image", record_type: "User", record_id: 2,
-                                      blob_id: 4 },
-                                    { name: "image", record_type: "User", record_id: 6,
-                                      blob_id: 5 },
+blob_id: 2 },
+                                    { name: "image", record_type: "User", record_id: 3,
+blob_id: 3 },
+                                    { name: "image", record_type: "User", record_id: 4,
+blob_id: 4 },
                                     { name: "image", record_type: "User", record_id: 5,
-                                      blob_id: 6 },
+blob_id: 5 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 1, blob_id: 7 },
+record_id: 1, blob_id: 6 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 2, blob_id: 8 },
+record_id: 2, blob_id: 7 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 3, blob_id: 9 },
+record_id: 3, blob_id: 8 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 4, blob_id: 10 },
+record_id: 4, blob_id: 9 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 5, blob_id: 11 },
+record_id: 5, blob_id: 10 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 6, blob_id: 12 },
+record_id: 6, blob_id: 11 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 7, blob_id: 13 },
+record_id: 7, blob_id: 12 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 8, blob_id: 14 },
+record_id: 8, blob_id: 13 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 9, blob_id: 15 },
+record_id: 9, blob_id: 14 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 10, blob_id: 16 },
+record_id: 10, blob_id: 15 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 11, blob_id: 17 },
+record_id: 11, blob_id: 16 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 12, blob_id: 18 },
+record_id: 12, blob_id: 17 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 13, blob_id: 19 },
+record_id: 13, blob_id: 18 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 14, blob_id: 20 },
+record_id: 14, blob_id: 19 },
                                     { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 15, blob_id: 21 },
-                                    { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 16, blob_id: 22 },
-                                    { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 17, blob_id: 23 },
-                                    { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 18, blob_id: 24 },
-                                    { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 19, blob_id: 25 },
-                                    { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 20, blob_id: 26 },
-                                    { name: "image", record_type: "ActiveStorage::VariantRecord",
-                                      record_id: 21, blob_id: 27 }
+record_id: 15, blob_id: 20 }
                                   ])
-
-# Cart.create!([
-#                { total: 0, user_id: 1 },
-#                { total: 0, user_id: 4 },
-#                { total: 0, user_id: 9 },
-#                { total: 100, user_id: 10 },
-#                { total: 0, user_id: 11 }
-#              ])
-
-# CartItem.create!([
-#                    { quantity: 1, cart_id: 4, service_offer_id: 7 }
-#                  ])
-
 ServiceOffer.create!([
                        { service_offer_name: "Boss Monster Design", service_offer_price: 500,
 service_offer_notes: "Mentoring you on how to design Boss Monsters for your TTRPG games.",
-google_forms_link: "google.com", caldotcom_link: "cal.com", slot_availabilty: 10, user: User.find(1),
+google_forms_link: "google.com", caldotcom_link: "cal.com", slot_availabilty: 10,
+user: User.find(1),
 service_type: ServiceType.find(1) },
                        { service_offer_name: "Player Character Optimization (5e)",
                        service_offer_price: 600,
@@ -438,7 +369,7 @@ service_type: ServiceType.find(1) },
                       to the City of Waterdeep within the setting of Forgotten Realms. You will
                       provide me with questions you want answered, I will provide you with answers
                       to your questions.", google_forms_link: "google.com", caldotcom_link: "",
-                      slot_availabilty: 9, user: User.find(4), service_type: ServiceType.find(4) },
+                      slot_availabilty: 9, user: User.find(3), service_type: ServiceType.find(4) },
                        { service_offer_name: "NPC Dialogue", service_offer_price: 500,
                      service_offer_notes: "I will write dialogue for an NPC for you. This can be
                      sample dialogue to help you practice roleplaying, or if you want the NPC to
@@ -446,13 +377,14 @@ service_type: ServiceType.find(1) },
                      provide me with details regarding the NPC and what, if any, scenes the
                      Dialogue is for. I will provide you with a document containing the text
                      for the dialogue (including notes).", google_forms_link: "google.com",
-                      caldotcom_link: "", slot_availabilty: 8, user: User.find(4), service_type: ServiceType.find(8) },
+                      caldotcom_link: "", slot_availabilty: 8, user: User.find(3),
+                      service_type: ServiceType.find(8) },
                        { service_offer_name: "Being a better player", service_offer_price: 100,
                      service_offer_notes: "Mentoring on how to be a better player at the table for
                      a TTRPG. This isn't about knowing mechanics or being tactical in combat.
                      These mentoring sessions are about being more polite, mindful, and a better
                      team player.", google_forms_link: "google.com", caldotcom_link: "cal.com",
-                     slot_availabilty: 6, user: User.find(6), service_type: ServiceType.find(1) },
+                     slot_availabilty: 6, user: User.find(5), service_type: ServiceType.find(1) },
                        { service_offer_name: "Character Drawing", service_offer_price: 2500,
                      service_offer_notes: "I will draw your TTRPG character. This can be from any
                      setting (fantasy, sci-fi, cyberpunk, etc etc). You will provide me with
@@ -469,7 +401,7 @@ service_type: ServiceType.find(1) },
                      know to get started will be encapsulated in one session.\r\nYou can provide
                      me with any background knowledge/history you have with TTRPGs.",
                      google_forms_link: "google.com", caldotcom_link: "cal.com",
-                     slot_availabilty: 10, user: User.find(5), service_type: ServiceType.find(5) },
+                     slot_availabilty: 10, user: User.find(4), service_type: ServiceType.find(5) },
                        { service_offer_name: "Designs a Boss Encounter(5e)",
                        service_offer_price: 1500,
                      service_offer_notes: "I will design a Boss Encounter for you for 5th Edition
@@ -482,270 +414,6 @@ service_type: ServiceType.find(1) },
                      me with a description of the boss encounter's location. I will return to you a
                      document with all the stats and abilities of this Boss and notes on how to
                      run the encounter.", google_forms_link: "google.com",
-                     caldotcom_link: "cal.com", slot_availabilty: 10, user: User.find(5),
+                     caldotcom_link: "cal.com", slot_availabilty: 10, user: User.find(4),
                      service_type: ServiceType.find(7) }
                      ])
-
-# OrderDetail.create!([
-#                       { time_of_sale_gst: 5000, time_of_sale_hst: 0, time_of_sale_pst: 7000,
-#                       time_of_sale_qst: 0,
-# stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 5000, time_of_sale_hst: 0, time_of_sale_pst: 7000,
-#                       time_of_sale_qst: 0,
-#                     stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 5000, time_of_sale_hst: 0, time_of_sale_pst: 7000,
-#                       time_of_sale_qst: 0,
-#                     stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 5000, time_of_sale_hst: 0, time_of_sale_pst: 7000,
-#                       time_of_sale_qst: 0,
-#                     stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 5000, time_of_sale_hst: 0, time_of_sale_pst: 7000,
-#                       time_of_sale_qst: 0,
-#                     stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 5000, time_of_sale_hst: 0, time_of_sale_pst: 7000,
-#                       time_of_sale_qst: 0,
-#                     stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 5000, time_of_sale_hst: 0, time_of_sale_pst: 0,
-#                       time_of_sale_qst: 9975,
-#                     stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 8000, time_of_sale_hst: 0, time_of_sale_pst: 0,
-#                       time_of_sale_qst: 9975,
-#                     stripe_item_id: nil, user_id: 1 },
-#                       { time_of_sale_gst: 8000, time_of_sale_hst: 0, time_of_sale_pst: 0,
-#                       time_of_sale_qst: 9975,
-#                     stripe_item_id: nil, user_id: 1 }
-#                     ])
-# Booking.create!([
-#                   {
-#                     booking_description: "Mentoring on how to be a better player at the table
-#                     for a TTRPG. This isn't about knowing mechanics or being tactical in combat.
-#                       These mentoring sessions are about being more polite, mindful, and a better
-#                       team player.", google_forms_link: "google.com", caldotcom_link: "cal.com",
-#                       user_id: 1, service_offer_id: 7
-#                   },
-#                   {
-#                     booking_description: "Mentoring on how to be a better player at the table
-#                     for a TTRPG. This isn't about knowing mechanics or being tactical in combat.
-#                       These mentoring sessions are about being more polite, mindful, and a better
-#                       team player.", google_forms_link: "google.com", caldotcom_link: "cal.com",
-#                       user_id: 1, service_offer_id: 7
-#                   },
-#                   {
-#                     booking_description: "Mentoring on how to be a better player at the table
-#                     for a TTRPG. This isn't about knowing mechanics or being tactical in combat.
-#                       These mentoring sessions are about being more polite, mindful, and a better
-#                       team player.", google_forms_link: "google.com", caldotcom_link: "cal.com",
-#                       user_id: 1, service_offer_id: 7
-#                   },
-#                   {
-#                     booking_description: "I will teach you how to play 5th edition Dungeons
-#                     and Dragons. I'll go over all the rules for how to run a player character.
-#                     This is a mechanics focused teaching session. Everything you should need to
-#                     know to get started will be encapsulated in one session.\r\nYou can provide
-#                     me with any background knowledge/history you have with TTRPGs.",
-#                     google_forms_link: "google.com", caldotcom_link: "cal.com", user_id: 1,
-
-#                     service_offer_id: 9
-#                   },
-#                   {
-#                     booking_description: "I will do research for you regarding something related
-#                       to the City of Waterdeep within the setting of Forgotten Realms. You will
-#                       provide me with questions you want answered, I will provide you with
-#                       answers to your questions.", google_forms_link: "google.com",
-#                       caldotcom_link: "", user_id: 1, service_offer_id: 5
-#                   },
-#                   {
-#                     booking_description: "I will optimize your 5th Edition D&D Character.
-#                      You will provide an idea and an already filled in character sheet and I will
-#                      provide you with a new character sheet that optimizes your character
-#                      mechanically.", google_forms_link: "google.com", caldotcom_link: "cal.com",
-#                      user_id: 1, service_offer_id: 2
-#                   },
-#                   {
-#                     booking_description: "I will design a Boss Encounter for you for 5th Edition
-#                     D&D. You will provide me with how many players you have and their levels
-#                     (you can also provide additional information about the party if you want),
-#                     you will provide me with a preference on what kind of creature
-#                     (Humanoid, Giant, Dragon, Elemental, etc etc) or you can be specific and
-#                     give me a specific creature you want a Boss Encounter designed for (Beholder,
-#                     Mindflayer, etc etc), and finally you will provide me with a description of
-#                     the boss encounter's location. I will return to you a document with all the
-#                     stats and abilities of this Boss and notes on how to run the encounter.",
-#                     google_forms_link: "google.com", caldotcom_link: "cal.com", user_id: 1,
-#                     service_offer_id: 10
-#                   },
-#                   {
-#                     booking_description: "I will write dialogue for an NPC for you. This can be
-#                     sample dialogue to help you practice roleplaying, or if you want the NPC
-#                     to make a speech or have someone overhear a conversation they are having.
-#                     You will provide me with details regarding the NPC and what, if any,
-#                     scenes the Dialogue is for. I will provide you with a document containing the
-#                     text for the dialogue (including notes).", google_forms_link: "google.com",
-#                     caldotcom_link: "", user_id: 1, service_offer_id: 6
-#                   },
-#                   {
-#                     booking_description: "I will teach you how to play 5th edition Dungeons and
-#                     Dragons. I'll go over all the rules for how to run a player character.
-#                     This is a mechanics focused teaching session. Everything you should need to
-#                     know to get started will be encapsulated in one session.\r\nYou can provide me
-#                     with any background knowledge/history you have with TTRPGs.",
-#                     google_forms_link: "google.com", caldotcom_link: "cal.com", user_id: 1,
-#                     service_offer_id: 9
-#                   },
-#                   {
-#                     booking_description: "I will teach you how to play 5th edition Dungeons and
-#                     Dragons. I'll go over all the rules for how to run a player character.
-#                     This is a mechanics focused teaching session. Everything you should need to
-#                     know to get started will be encapsulated in one session.\r\nYou can provide me
-#                     with any background knowledge/history you have with TTRPGs.",
-#                     google_forms_link: "google.com", caldotcom_link: "cal.com", user_id: 1,
-#                     service_offer_id: 9
-#                   },
-#                   {
-#                     booking_description: "I will design a Boss Encounter for you for 5th Edition
-#                     D&D. You will provide me with how many players you have and their levels
-#                     (you can also provide additional information about the party if you want),
-#                     you will provide me with a preference on what kind of creature (Humanoid,
-#                     Giant, Dragon, Elemental, etc etc) or you can be specific and give me a
-#                     specific creature you want a Boss Encounter designed for (Beholder,
-#                     Mindflayer, etc etc), and finally you will provide me with a description
-#                     of the boss encounter's location. I will return to you a document with
-#                     all the stats and abilities of this Boss and notes on how to run the
-#                     encounter.", google_forms_link: "google.com", caldotcom_link: "cal.com",
-#                     user_id: 1, service_offer_id: 10
-#                   },
-#                   {
-#                     booking_description: "I will design a Boss Encounter for you for 5th Edition
-#                     D&D. You will provide me with how many players you have and their levels
-#                     (you can also provide additional information about the party if you want),
-#                     you will provide me with a preference on what kind of creature (Humanoid,
-#                     Giant, Dragon, Elemental, etc etc) or you can be specific and give me a
-#                     specific creature you want a Boss Encounter designed for (Beholder,
-#                     Mindflayer, etc etc), and finally you will provide me with a description of
-#                     the boss encounter's location. I will return to you a document with all the
-#                     stats and abilities of this Boss and notes on how to run the encounter.",
-#                     google_forms_link: "google.com", caldotcom_link: "cal.com", user_id: 1,
-#                     service_offer_id: 10
-#                   },
-#                   {
-#                     booking_description: "I will do research for you regarding something related
-#                       to the City of Waterdeep within the setting of Forgotten Realms. You will
-#                       provide me with questions you want answered, I will provide you with
-#                       answers to your questions.", google_forms_link: "google.com",
-#                       caldotcom_link: "", user_id: 1, service_offer_id: 5
-#                   },
-#                   {
-#                     booking_description: "I will do research for you regarding something related
-#                       to the City of Waterdeep within the setting of Forgotten Realms.
-#                       You will provide me with questions you want answered, I will provide you
-#                       with answers to your questions.", google_forms_link: "google.com",
-#                       caldotcom_link: "", user_id: 1, service_offer_id: 5
-#                   },
-#                   {
-#                     booking_description: "I will do research for you regarding something related
-#                       to the City of Waterdeep within the setting of Forgotten Realms.
-#                       You will provide me with questions you want answered, I will provide you with
-#                       answers to your questions.", google_forms_link: "google.com",
-#                       caldotcom_link: "", user_id: 1, service_offer_id: 5
-#                   },
-#                   {
-#                     booking_description: "I will do research for you regarding something related
-#                       to the City of Waterdeep within the setting of Forgotten Realms.
-#                       You will provide me with questions you want answered, I will provide you with
-#                       answers to your questions.", google_forms_link: "google.com",
-#                       caldotcom_link: "", user_id: 1, service_offer_id: 5
-#                   },
-#                   {
-#                     booking_description: "I will do research for you regarding something related
-#                       to the City of Waterdeep within the setting of Forgotten Realms.
-#                       You will provide me with questions you want answered, I will provide you
-#                       with answers to your questions.", google_forms_link: "google.com",
-#                       caldotcom_link: "", user_id: 1, service_offer_id: 5
-#                   },
-#                   {
-#                     booking_description: "I will optimize your 5th Edition D&D Character. You will
-#                     provide an idea and an already filled in character sheet and I will provide
-#                     you with a new character sheet that optimizes your character mechanically.",
-#                     google_forms_link: "google.com", caldotcom_link: "cal.com", user_id: 1,
-#                     service_offer_id: 2
-#                   },
-#                   {
-#                     booking_description: "I will optimize your 5th Edition D&D Character. You will
-#                     provide an idea and an already filled in character sheet and I will provide
-#                     you with a new character sheet that optimizes your character mechanically.",
-#                      google_forms_link: "google.com", caldotcom_link: "cal.com", user_id: 1,
-#                      service_offer_id: 2
-#                   },
-#                   {
-#                     booking_description: "I will write dialogue for an NPC for you. This can be
-#                     sample dialogue to help you practice roleplaying, or if you want the NPC to
-#                     make a speech or have someone overhear a conversation they are having. You
-#                      will provide me with details regarding the NPC and what, if any, scenes the
-#                      Dialogue is for. I will provide you with a document containing the text for
-#                       the dialogue (including notes).", google_forms_link: "google.com",
-#                       caldotcom_link: "", user_id: 1, service_offer_id: 6
-#                   }
-#                 ])
-
-# OrderItem.create!([
-#                     { price_before_tax: 100, user_id: 6, service_offer_id: 7, order_detail_id: 40,
-#                     booking_id: 35,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 100, user_id: 6, service_offer_id: 7, order_detail_id: 40,
-#                     booking_id: 36,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 100, user_id: 6, service_offer_id: 7, order_detail_id: 40,
-#                     booking_id: 37,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 1000, user_id: 5, service_offer_id: 9, order_detail_id: 40,
-#                     booking_id: 38,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 400, user_id: 4, service_offer_id: 5, order_detail_id: 42,
-#                     booking_id: 39,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 600, user_id: 2, service_offer_id: 2, order_detail_id: 43,
-#                     booking_id: 40,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 1500, user_id: 5, service_offer_id: 10, order_detail_id: 43,
-#                     booking_id: 41,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 500, user_id: 4, service_offer_id: 6, order_detail_id: 44,
-#                     booking_id: 42,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 1000, user_id: 5, service_offer_id: 9, order_detail_id: 45,
-#                     booking_id: 43,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 1000, user_id: 5, service_offer_id: 9, order_detail_id: 46,
-#                     booking_id: 44,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 1500, user_id: 5, service_offer_id: 10, order_detail_id: 46,
-#                     booking_id: 45,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 1500, user_id: 5, service_offer_id: 10, order_detail_id: 46,
-#                     booking_id: 46,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 400, user_id: 4, service_offer_id: 5, order_detail_id: 47,
-#                     booking_id: 47,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 400, user_id: 4, service_offer_id: 5, order_detail_id: 47,
-#                     booking_id: 48,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 400, user_id: 4, service_offer_id: 5, order_detail_id: 47,
-#                     booking_id: 49,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 400, user_id: 4, service_offer_id: 5, order_detail_id: 47,
-#                     booking_id: 50,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 400, user_id: 4, service_offer_id: 5, order_detail_id: 47,
-#                     booking_id: 51,
-#                   order_item_status_id: 2 },
-#                     { price_before_tax: 600, user_id: 2, service_offer_id: 2, order_detail_id: 48,
-#                     booking_id: 52,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 600, user_id: 2, service_offer_id: 2, order_detail_id: 48,
-#                     booking_id: 53,
-#                   order_item_status_id: 4 },
-#                     { price_before_tax: 500, user_id: 4, service_offer_id: 6, order_detail_id: 49,
-#                     booking_id: 54,
-#                   order_item_status_id: 4 }
-#                   ])
