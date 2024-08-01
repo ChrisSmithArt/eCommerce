@@ -5,6 +5,7 @@ class OrderItemStatus < ApplicationRecord
   has_many(:order_items, dependent: :destroy)
 
   validates :status, presence: true
+  validates :created_at, presence: true
 
   def self.ransackable_associations(_auth_object = nil)
     ["order_items"]

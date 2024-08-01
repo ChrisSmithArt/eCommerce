@@ -28,12 +28,8 @@ class User < ApplicationRecord
   end
 
   validates :user_name, presence: true
-  # validates :user_name, exclusion: { in: %w[admin superuser] }
-
   validates :email, presence: true
-  # validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :email, uniqueness: true
-
   validates :address, presence: true
 
   def self.ransackable_associations(_auth_object = nil)
